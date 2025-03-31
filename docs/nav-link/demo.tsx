@@ -1,6 +1,6 @@
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { NavLink } from "@/registry/new-york/active-link/nav-link";
+import { NavLink } from "@/registry/new-york/nav-link/nav-link";
 
 const links = [
   { href: "/", label: "Home" },
