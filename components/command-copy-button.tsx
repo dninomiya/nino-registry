@@ -16,10 +16,10 @@ export function CommandCopyButton({ command }: { command: string }) {
   };
 
   return (
-    <div className="flex flex-1 h-7 items-center gap-1 rounded-md border p-[2px]">
+    <div className="flex flex-1 h-7 items-center gap-1 overflow-hidden rounded-md border p-[2px]">
       <Button
         variant="ghost"
-        className="items-center justify-start whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground text-xs hidden h-[22px] w-full flex-1 gap-1 rounded-sm px-2 md:flex lg:w-auto"
+        className="w-full text-left h-5 rounded-sm"
         onClick={handleClick}
       >
         {copied ? (
@@ -27,7 +27,7 @@ export function CommandCopyButton({ command }: { command: string }) {
         ) : (
           <Terminal className="size-4" />
         )}
-        <span className="hidden lg:inline">{command}</span>
+        <span className="block flex-1 truncate">{command}</span>
       </Button>
     </div>
   );

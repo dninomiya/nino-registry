@@ -14,11 +14,10 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { VersionSwitcher } from "@/components/version-switcher";
 import { Registry } from "@/lib/types";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SidebarLogo } from "./sidebar-logo/sidebar-logo";
-import Link from "next/link";
 
 export function AppSidebar({
   registry,

@@ -1,5 +1,5 @@
 import { RegistryItemHeader } from "@/components/registry-item-header";
-import { getRegistry, getRegistryItem } from "@/lib/registry";
+import { getRegistryItem } from "@/lib/registry";
 
 export const generateMetadata = async ({
   params,
@@ -23,7 +23,7 @@ export default async function DocPage({
   const Doc = (await import(`@/docs/${name}/doc.mdx`)).default;
 
   return (
-    <article className="prose dark:prose-invert py-12 mx-auto w-full">
+    <article className="container prose dark:prose-invert py-12 w-full">
       <RegistryItemHeader itemName={name} />
       <Doc />
     </article>
