@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export function ActiveLink({
+export function NavLink({
   href,
   children,
   className,

@@ -1,0 +1,22 @@
+import Demo from "./demo";
+
+<DemoCanvas center>
+  <Demo />
+</DemoCanvas>
+
+```tsx
+"use client";
+
+import { InputImage } from "@/components/input-image";
+
+export default function Demo() {
+  return (
+    <InputImage
+      resultWidth={256}
+      width={128}
+      value=""
+      onChange={(value) => console.log(value)}
+    />
+  );
+}
+```

@@ -1,4 +1,7 @@
 import createMDX from '@next/mdx'
+import codeImport from 'remark-code-import';
+import rehypeShiki from '@shikijs/rehype'
+import remarkGfm from 'remark-gfm'
  
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -9,6 +12,16 @@ const nextConfig = {
  
 const withMDX = createMDX({
   // Add markdown plugins here, as desired
+  options: {
+    remarkPlugins: [remarkGfm, codeImport],
+    rehypePlugins: [
+      [rehypeShiki, {
+        themes: {
+          light: 'github-dark-default'
+        }
+      }]
+    ]
+  }
 })
  
 // Merge MDX config with Next.js config
