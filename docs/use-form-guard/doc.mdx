@@ -1,0 +1,35 @@
+import Demo from "./demo";
+
+<DemoCanvas>
+  <Demo />
+</DemoCanvas>
+
+## 概要
+
+`useFormGuard`は、フォームの状態を監視し、ユーザーが変更を加えた後にページを離れようとした場合に警告を表示します。これにより、意図しないデータの損失を防ぐことができます。
+
+## 使い方
+
+```tsx
+"use client";
+
+import { useFormGuard } from "@/hooks/use-form-guard";
+import { useForm } from "react-hook-form";
+
+export default function FormPage() {
+  const { formState: { isDirty } } = useForm();
+
+  useFormGuard(isDirty);
+  // ...
+}
+```
+
+## 機能
+
+- ブラウザによる離脱時の警告表示（タブを閉じる、更新ボタンを押すなど）
+- Next.js によるページ離脱時の警告表示
+
+### 補足
+
+- router.push や router.replace によるページ遷移時には警告表示されません。
+- Safari ではブラウザバック時の警告は表示されません。

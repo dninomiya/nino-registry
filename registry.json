@@ -54,6 +54,32 @@
       ],
       "dependencies": [],
       "registryDependencies": []
+    },
+    {
+      "name": "use-form-guard",
+      "type": "registry:hook",
+      "title": "useFormGuard",
+      "description": "フォーム入力中の離脱ガードを支援するカスタムフック",
+      "files": [
+        {
+          "path": "registry/new-york/use-form-guard/use-form-guard.ts",
+          "type": "registry:hook"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "get-base-url",
+      "type": "registry:lib",
+      "title": "getBaseURL",
+      "description": "Vercel ホスティング、カスタムドメインに対応したベース URLを取得する関数",
+      "files": [
+        {
+          "path": "registry/new-york/get-base-url/get-base-url.ts",
+          "type": "registry:lib"
+        }
+      ]
     }
   ]
 }

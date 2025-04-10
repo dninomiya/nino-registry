@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useIsActivePath } from "@/registry/new-york/use-is-active-path/use-is-active-path";
+import { useIsActivePath } from "@/hooks/use-is-active-path";
 
 export function NavLink({
   href,

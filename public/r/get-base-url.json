@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "get-base-url",
+  "type": "registry:lib",
+  "title": "getBaseURL",
+  "description": "Vercel ホスティング、カスタムドメインに対応したベース URLを取得する関数",
+  "files": [
+    {
+      "path": "registry/new-york/get-base-url/get-base-url.ts",
+      "content": "/**\n * ベース URL取得する\n *\n * - 末尾にスラッシュはつかない\n * - Vercel ホスティング、カスタムドメインに対応\n *\n * @example\n * 'http://localhost:3000'\n * 'https://foo-git-develop-bar.vercel.app\n * 'https://example.com'\n */\nexport const getBaseURL = () => {\n  const isProd = process.env.NEXT_PUBLIC_VERCEL_ENV === \"production\";\n  const url = isProd\n    ? process.env.VERCEL_PROJECT_PRODUCTION_URL\n    : process.env.VERCEL_URL;\n\n  return url\n    ? `https://${url}`\n    : `http://localhost:${process.env.PORT || 3000}`;\n};\n",
+      "type": "registry:lib"
+    }
+  ]
+}

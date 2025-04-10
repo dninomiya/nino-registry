@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { CheckIcon, CopyIcon } from "lucide-react";
+import { CheckIcon, Copy } from "lucide-react";
 import { useState } from "react";
 
 export function CopyCodeButton() {
@@ -26,9 +26,9 @@ export function CopyCodeButton() {
       }}
     >
       {isCopied ? (
-        <CheckIcon className="w-4 h-4" />
+        <CheckIcon className="size-3.5" />
       ) : (
-        <CopyIcon className="w-4 h-4" />
+        <Copy className="size-3.5" />
       )}
     </Button>
   );

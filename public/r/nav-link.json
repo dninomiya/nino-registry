@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "registry/new-york/nav-link/nav-link.tsx",
-      "content": "\"use client\";\n\nimport Link from \"next/link\";\nimport { useIsActivePath } from \"@/registry/new-york/use-is-active-path/use-is-active-path\";\n\nexport function NavLink({\n  href,\n  children,\n  className,\n  exact,\n  ref,\n  ...props\n}: {\n  href: string;\n  children: React.ReactNode;\n  className?: string;\n  exact?: boolean;\n  ref?: React.Ref<HTMLAnchorElement>;\n} & React.ComponentProps<typeof Link>) {\n  const isActivePath = useIsActivePath();\n\n  return (\n    <Link\n      href={href}\n      aria-current={isActivePath(href, { exact }) ? \"page\" : undefined}\n      className={className}\n      ref={ref}\n      {...props}\n    >\n      {children}\n    </Link>\n  );\n}\n",
+      "content": "\"use client\";\n\nimport Link from \"next/link\";\nimport { useIsActivePath } from \"@/hooks/use-is-active-path\";\n\nexport function NavLink({\n  href,\n  children,\n  className,\n  exact,\n  ref,\n  ...props\n}: {\n  href: string;\n  children: React.ReactNode;\n  className?: string;\n  exact?: boolean;\n  ref?: React.Ref<HTMLAnchorElement>;\n} & React.ComponentProps<typeof Link>) {\n  const isActivePath = useIsActivePath();\n\n  return (\n    <Link\n      href={href}\n      aria-current={isActivePath(href, { exact }) ? \"page\" : undefined}\n      className={className}\n      ref={ref}\n      {...props}\n    >\n      {children}\n    </Link>\n  );\n}\n",
       "type": "registry:component"
     }
   ]

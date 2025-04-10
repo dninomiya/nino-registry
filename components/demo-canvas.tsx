@@ -12,7 +12,7 @@ export function DemoCanvas({
   return (
     <div
       className={cn(
-        "p-4 border rounded not-prose",
+        "p-4 border rounded-md not-prose",
         center && "flex items-center justify-center",
         className,
       )}

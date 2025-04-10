@@ -1,0 +1,64 @@
+import Demo from "./demo";
+
+<DemoCanvas>
+  <Demo />
+</DemoCanvas>
+
+## 概要
+
+`getBaseURL`は、アプリケーションが実行されている環境に応じて適切なベースURLを返します。Vercelでのホスティングやカスタムドメインにも対応しています。
+
+## 使い方
+
+```tsx
+import { getBaseURL } from "@/lib/get-base-url";
+
+// ベースURLを取得
+const baseURL = getBaseURL();
+```
+
+## 機能
+
+- 環境に応じたベースURLの自動判定
+- Vercelホスティング対応
+- カスタムドメイン対応
+- 開発環境でのローカルホスト対応
+
+## 戻り値
+
+- 開発環境: `http://localhost:3000`
+- Vercelのプレビュー環境: `https://[project-name]-git-[branch-name]-[username].vercel.app`
+- 本番環境: `https://example.com`
+
+返されるURLの末尾にはスラッシュが含まれません
+
+## 使用例
+
+### 基本的な使用例
+
+```tsx
+import { getBaseURL } from "@/lib/get-base-url";
+
+function MyComponent() {
+  const baseURL = getBaseURL();
+  
+  return (
+    <div>
+      <p>ベースURL: {baseURL}</p>
+    </div>
+  );
+}
+```
+
+### APIエンドポイントの構築
+
+```tsx
+import { getBaseURL } from "@/lib/get-base-url";
+
+async function fetchData() {
+  const baseURL = getBaseURL();
+  const response = await fetch(`${baseURL}/api/data`);
+  const data = await response.json();
+  return data;
+}
+```
