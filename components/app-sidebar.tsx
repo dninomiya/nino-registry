@@ -50,6 +50,14 @@ export function AppSidebar({
           url: `/${item.name}`,
         })),
       },
+      {
+        title: "Hooks",
+        url: "#",
+        items: registry.items.map((item) => ({
+          title: item.title,
+          url: `/${item.name}`,
+        })),
+      },
     ],
   };
 
@@ -60,7 +68,6 @@ export function AppSidebar({
         <SearchForm />
       </SidebarHeader>
       <SidebarContent>
-        {/* We create a SidebarGroup for each parent. */}
         {data.navMain.map((item) => (
           <SidebarGroup key={item.title}>
             <SidebarGroupLabel>{item.title}</SidebarGroupLabel>

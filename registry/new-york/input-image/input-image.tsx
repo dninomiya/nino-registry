@@ -18,28 +18,28 @@ import { useDropzone } from "react-dropzone";
 type Props = {
   testid?: string;
   /**
-   * Width of the preview area
+   * プレビュー領域の横幅
    */
   width?: string | number;
   /**
-   * Aspect ratio of the image
+   * 画像のアスペクト比
    * */
   aspectRatio?: number;
   /**
-   * Width after cropping
+   * クロップ後の横幅
    * */
   resultWidth: number;
   /**
-   * Value of the image
+   * 画像の値
    */
   value: string | null | undefined;
   /**
-   * Callback function when the image is changed
+   * 画像が変更された時のコールバック関数
    */
   onChange: (value: string) => void;
   /**
-   * Max size of the input image.
-   * Default is 4MB.
+   * 入力画像の最大サイズ
+   * デフォルトは4MB
    */
   maxSize?: number;
 };
@@ -99,7 +99,7 @@ export function InputImage({
           {...getRootProps()}
         >
           {!value && (
-            <ImagePlus className="w-10 h-10 text-muted-foreground opacity-30" />
+            <ImagePlus className="size-8 text-muted-foreground opacity-30" />
           )}
           {value && (
             <Image
@@ -117,7 +117,8 @@ export function InputImage({
         {value && (
           <Button
             type="button"
-            className="absolute top-2 right-2 size-8"
+            variant="outline"
+            className="absolute top-2 right-2 size-8 text-muted-foreground"
             size="icon"
             onClick={() => {
               onChange("");
