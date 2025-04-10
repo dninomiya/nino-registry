@@ -4,5 +4,92 @@ import { Demo } from "./demo";
   <Demo />
 </DemoCanvas>
 
+## 使い方
+
+`NavLink`コンポーネントは、ナビゲーションリンクを提供します。現在のパスに基づいてアクティブ状態を自動的に管理します。
+
+### 基本的な使い方
+
+```tsx
+import { NavLink } from "@/components/nav-link";
+
+export default function Demo() {
+  return (
+    <NavLink href="/dashboard" className="aria-[current=page]:font-bold">
+      ダッシュボード
+    </NavLink>
+  );
+}
+```
+
+### プロパティ
+
+| プロパティ | 型 | デフォルト値 | 説明 |
+|-----------|----|------------|------|
+| `href` | string | - | リンク先のパス（必須） |
+| `children` | React.ReactNode | - | リンクの内容 |
+| `className` | string | - | 追加のCSSクラス |
+| `exact` | boolean | false | `true`の場合、パスが完全一致した時のみアクティブ状態になります |
+| `ref` | React.Ref&lt;HTMLAnchorElement&gt; | - | リンク要素への参照 |
+
+その他のプロパティは`next/link`の`Link`コンポーネントのプロパティを継承します。
+
+### 機能
+
+- 現在のパスに基づくアクティブ状態の自動管理
+- `exact`プロパティによる厳密なパスマッチング
+- Next.jsの`Link`コンポーネントとの統合
+- アクティブ状態の`aria-current`属性の自動設定
+
+### スタイリング
+
+アクティブ状態のスタイリングは、`aria-[current=page]`属性セレクタを使用して行います：
+
+```tsx
+// 基本的な例
+<NavLink 
+  href="/dashboard"
+  className="aria-[current=page]:font-bold"
+>
+  ダッシュボード
+</NavLink>
+
+// 複数のスタイルを適用する例
+<NavLink 
+  href="/settings"
+  className="text-gray-600 hover:text-gray-900 aria-[current=page]:text-blue-600 aria-[current=page]:font-bold"
+>
+  設定
+</NavLink>
+```
+
+### 注意点
+
+- `href`プロパティは必須です
+- ルートパス（`/`）の場合は、`exact`の値に関わらず完全一致でのみアクティブ状態になります
+- アクティブ状態は`pathname`に基づいて自動的に判定されます
+- アクティブ状態のスタイリングは`aria-[current=page]`属性セレクタを使用します
+
+### カスタマイズ例
+
+```tsx
+// 完全一致でのみアクティブになる例
+<NavLink 
+  href="/settings"
+  exact
+  className="text-gray-600 hover:text-gray-900 aria-[current=page]:text-blue-600"
+>
+  設定
+</NavLink>
+
+// パスの前方一致でアクティブになる例
+<NavLink 
+  href="/dashboard"
+  className="text-gray-600 hover:text-gray-900 aria-[current=page]:bg-blue-100 aria-[current=page]:text-blue-700"
+>
+  ダッシュボード
+</NavLink>
+```
+
 ```tsx file=./demo.tsx
 ```

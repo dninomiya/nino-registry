@@ -17,7 +17,7 @@ export async function RegistryItemHeader({ itemName }: { itemName: string }) {
 
       <div className="flex justify-end items-center gap-2">
         <CommandCopyButton
-          command={`pnpx shadcn@latest add https://ui.dninomiya.com/r/${item.name}`}
+          command={`pnpx shadcn@latest add https://ui.dninomiya.com/r/${item.name}.json`}
         />
         <Separator orientation="vertical" className="!h-4" />
         <OpenInV0Button id={item.name} />

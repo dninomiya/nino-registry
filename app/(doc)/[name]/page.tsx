@@ -23,7 +23,7 @@ export default async function DocPage({
   const Doc = (await import(`@/docs/${name}/doc.mdx`)).default;
 
   return (
-    <article className="container prose dark:prose-invert py-12 w-full">
+    <article className="container max-w-4xl prose dark:prose-invert py-12 w-full">
       <RegistryItemHeader itemName={name} />
       <Doc />
     </article>

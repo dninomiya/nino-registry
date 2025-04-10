@@ -2,6 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "ninoui",
   "homepage": "https://ui.dninomiya.com",
+  "author": "nino (https://ui.dninomiya.com)",
   "items": [
     {
       "name": "nav-link",
@@ -26,9 +27,9 @@
           "type": "registry:component"
         }
       ],
+      "docs": "Please install @types/react-avatar-editor as a dev dependency to use this component.\n\npnpm add -D @types/react-avatar-editor",
       "dependencies": [
         "react-avatar-editor",
-        "@types/react-avatar-editor",
         "react-dropzone"
       ],
       "registryDependencies": [

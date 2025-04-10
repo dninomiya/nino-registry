@@ -4,6 +4,12 @@ import Demo from "./demo";
   <Demo />
 </DemoCanvas>
 
+## 使い方
+
+`InputImage`コンポーネントは、画像のプレビューとトリミング機能を提供します。
+
+### 基本的な使い方
+
 ```tsx
 "use client";
 
@@ -20,3 +26,91 @@ export default function Demo() {
   );
 }
 ```
+
+### Formとの連携例
+
+```tsx
+"use client";
+
+import { InputImage } from "@/components/input-image";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
+
+const formSchema = z.object({
+  avatar: z.string().optional(),
+});
+
+export default function FormExample() {
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      avatar: "",
+    },
+  });
+
+  return (
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit((data) => console.log(data))}>
+        <FormField
+          control={form.control}
+          name="avatar"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>プロフィール画像</FormLabel>
+              <InputImage
+                resultWidth={256}
+                width={128}
+                value={field.value}
+                onChange={field.onChange}
+              />
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+      </form>
+    </Form>
+  );
+}
+```
+
+### プロパティ
+
+| プロパティ | 型 | デフォルト値 | 説明 |
+|-----------|----|------------|------|
+| `width` | string \| number | "100%" | プレビューの幅 |
+| `aspectRatio` | number | 1 | 画像のアスペクト比 |
+| `resultWidth` | number | - | トリミング後の画像幅（必須） |
+| `value` | string \| null \| undefined | "" | 画像の値（base64形式） |
+| `onChange` | (value: string) => void | - | 画像が変更された時のコールバック関数 |
+| `maxSize` | number | 4MB | 画像の最大サイズ |
+
+### 機能
+
+- 画像のプレビュー表示
+- トリミング機能（スケール調整可能）
+- 画像の削除機能
+- JPEG、PNG、WebP形式のサポート
+
+### 注意点
+
+- トリミング後の画像は自動的に指定された`resultWidth`にリサイズされます
+- 画像のアスペクト比は`aspectRatio`プロパティで制御できます
+- このコンポーネントは画像の編集機能のみを提供し、アップロード機能は含まれていません
+- トリミング後の画像はJPG形式で出力されます（PNG形式の場合、切り抜き後にファイルサイズが大きくなる可能性があるため）
+
+> **参考**: [react-avatar-editorの既知の問題](https://github.com/mosch/react-avatar-editor/issues/172)
+
+### カスタマイズ例
+
+```tsx
+<InputImage
+  width={200}
+  aspectRatio={16/9}
+  resultWidth={800}
+  value={imageUrl}
+  onChange={(newImage) => setImageUrl(newImage)}
+/>
+```
+
