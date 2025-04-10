@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "registry/new-york/get-base-url/get-base-url.ts",
-      "content": "/**\n * ベース URL取得する\n *\n * - 末尾にスラッシュはつかない\n * - Vercel ホスティング、カスタムドメインに対応\n *\n * @example\n * 'http://localhost:3000'\n * 'https://foo-git-develop-bar.vercel.app\n * 'https://example.com'\n */\nexport const getBaseURL = () => {\n  const isProd = process.env.NEXT_PUBLIC_VERCEL_ENV === \"production\";\n  const url = isProd\n    ? process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL\n    : process.env.NEXT_PUBLIC_VERCEL_BRANCH_URL;\n\n  return url\n    ? `https://${url}`\n    : `http://localhost:${process.env.PORT || 3000}`;\n};\n",
+      "content": "/**\n * ベース URL取得する\n *\n * - 末尾にスラッシュはつかない\n * - Vercel ホスティング、カスタムドメインに対応\n *\n * @param options.useCommitURL - Vercel のコミットURLを使用するかどうか\n *\n * @example\n * 'http://localhost:3000'\n * 'https://my-site.vercel.app' // useCommitURL: true\n * 'https://my-site-git-improve-about-page.vercel.app' // useCommitURL: false\n * 'https://my-site.com'\n */\nexport const getBaseURL = (options?: { useCommitURL?: boolean }) => {\n  const isProd = process.env.NEXT_PUBLIC_VERCEL_ENV === \"production\";\n  const url = isProd\n    ? process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL\n    : options?.useCommitURL\n      ? process.env.NEXT_PUBLIC_VERCEL_URL\n      : process.env.NEXT_PUBLIC_VERCEL_BRANCH_URL;\n\n  return url\n    ? `https://${url}`\n    : `http://localhost:${process.env.PORT || 3000}`;\n};\n",
       "type": "registry:lib"
     }
   ]
