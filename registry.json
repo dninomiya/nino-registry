@@ -14,11 +14,14 @@
           "path": "registry/new-york/nav-link/nav-link.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "https://ui.dninomiya.com/r/use-is-active-path.json"
       ]
     },
     {
       "name": "input-image",
-      "type": "registry:block",
+      "type": "registry:component",
       "title": "Input Image",
       "description": "画像を選択できるコンポーネント",
       "files": [
@@ -37,6 +40,20 @@
         "dialog",
         "slider"
       ]
+    },
+    {
+      "name": "use-is-active-path",
+      "type": "registry:hook",
+      "title": "useIsActivePath",
+      "description": "現在のパスが指定されたパスと一致するかどうかを判定するカスタムフック",
+      "files": [
+        {
+          "path": "registry/new-york/use-is-active-path/use-is-active-path.ts",
+          "type": "registry:hook"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
     }
   ]
 }

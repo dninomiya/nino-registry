@@ -1,5 +1,4 @@
 import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import { NavLink } from "@/registry/new-york/nav-link/nav-link";
 
 const links = [
@@ -15,10 +14,10 @@ export function Demo() {
         <NavLink
           key={link.href}
           href={link.href}
-          className={cn(
-            buttonVariants({ variant: "outline" }),
-            "aria-[current=page]:font-bold",
-          )}
+          className={buttonVariants({
+            variant: "outline",
+            className: "aria-[current=page]:text-sky-500",
+          })}
           exact={link.exact}
         >
           {link.label}

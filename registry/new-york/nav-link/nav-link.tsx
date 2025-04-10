@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useIsActivePath } from "@/registry/new-york/use-is-active-path/use-is-active-path";
 
 export function NavLink({
   href,
@@ -17,18 +17,12 @@ export function NavLink({
   exact?: boolean;
   ref?: React.Ref<HTMLAnchorElement>;
 } & React.ComponentProps<typeof Link>) {
-  const pathname = usePathname();
-  const isRoot = href === "/";
-  const isActive = exact
-    ? pathname === href
-    : isRoot
-      ? pathname === href
-      : pathname.startsWith(href);
+  const isActivePath = useIsActivePath();
 
   return (
     <Link
       href={href}
-      aria-current={isActive ? "page" : undefined}
+      aria-current={isActivePath(href, { exact }) ? "page" : undefined}
       className={className}
       ref={ref}
       {...props}

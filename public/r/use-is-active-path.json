@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-is-active-path",
+  "type": "registry:hook",
+  "title": "useIsActivePath",
+  "description": "現在のパスが指定されたパスと一致するかどうかを判定するカスタムフック",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/new-york/use-is-active-path/use-is-active-path.ts",
+      "content": "\"use client\";\n\nimport { usePathname } from \"next/navigation\";\nimport { useCallback } from \"react\";\n\n/**\n * 現在のパスが指定されたパスと一致するかどうかを判定する\n */\nexport function useIsActivePath() {\n  const pathname = usePathname();\n\n  /**\n   * 現在のパスが指定されたパスと一致するかどうかを判定する\n   *\n   * @param comparePath 比較するパス\n   * @param options.exact 完全一致かどうか\n   */\n  const isActivePath = useCallback(\n    (\n      comparePath: string,\n      options?: {\n        exact?: boolean;\n      },\n    ) => {\n      const isRoot = comparePath === \"/\";\n      const normalizedCompare = comparePath.replace(/\\/+$/, \"\");\n\n      if (isRoot || options?.exact) {\n        return pathname === normalizedCompare;\n      }\n\n      return pathname.startsWith(normalizedCompare);\n    },\n    [pathname],\n  );\n\n  return isActivePath;\n}\n",
+      "type": "registry:hook"
+    }
+  ]
+}

@@ -4,10 +4,13 @@
   "type": "registry:component",
   "title": "Nav Link",
   "description": "アクティブなリンクを装飾できるリンクコンポーネント",
+  "registryDependencies": [
+    "https://ui.dninomiya.com/r/use-is-active-path.json"
+  ],
   "files": [
     {
       "path": "registry/new-york/nav-link/nav-link.tsx",
-      "content": "\"use client\";\n\nimport Link from \"next/link\";\nimport { usePathname } from \"next/navigation\";\n\nexport function NavLink({\n  href,\n  children,\n  className,\n  exact,\n  ref,\n  ...props\n}: {\n  href: string;\n  children: React.ReactNode;\n  className?: string;\n  exact?: boolean;\n  ref?: React.Ref<HTMLAnchorElement>;\n} & React.ComponentProps<typeof Link>) {\n  const pathname = usePathname();\n  const isRoot = href === \"/\";\n  const isActive = exact\n    ? pathname === href\n    : isRoot\n      ? pathname === href\n      : pathname.startsWith(href);\n\n  return (\n    <Link\n      href={href}\n      aria-current={isActive ? \"page\" : undefined}\n      className={className}\n      ref={ref}\n      {...props}\n    >\n      {children}\n    </Link>\n  );\n}\n",
+      "content": "\"use client\";\n\nimport Link from \"next/link\";\nimport { useIsActivePath } from \"@/registry/new-york/use-is-active-path/use-is-active-path\";\n\nexport function NavLink({\n  href,\n  children,\n  className,\n  exact,\n  ref,\n  ...props\n}: {\n  href: string;\n  children: React.ReactNode;\n  className?: string;\n  exact?: boolean;\n  ref?: React.Ref<HTMLAnchorElement>;\n} & React.ComponentProps<typeof Link>) {\n  const isActivePath = useIsActivePath();\n\n  return (\n    <Link\n      href={href}\n      aria-current={isActivePath(href, { exact }) ? \"page\" : undefined}\n      className={className}\n      ref={ref}\n      {...props}\n    >\n      {children}\n    </Link>\n  );\n}\n",
       "type": "registry:component"
     }
   ]

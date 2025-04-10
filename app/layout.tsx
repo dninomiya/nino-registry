@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { getRegistry } from "@/lib/registry";
+import { ThemeProvider } from "next-themes";
+import { Inter } from "next/font/google";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,6 +16,8 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
@@ -31,12 +35,21 @@ export default async function RootLayout({
   const registry = await getRegistry();
 
   return (
-    <html lang="ja">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <SidebarProvider>
-          <AppSidebar className="h-full" registry={registry} />
-          <SidebarInset>{children}</SidebarInset>
-        </SidebarProvider>
+    <html lang="ja" suppressHydrationWarning>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.className}`}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <SidebarProvider>
+            <AppSidebar className="h-full" registry={registry} />
+            <SidebarInset>{children}</SidebarInset>
+          </SidebarProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
