@@ -1,6 +1,6 @@
 "use client";
 
-import { useFormGuard } from "@/registry/new-york/use-form-guard/use-form-guard";
+import { useNavigationGuard } from "@/registry/new-york/use-navigation-guard/use-navigation-guard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -18,7 +18,7 @@ import { useState } from "react";
 export default function Demo() {
   const [isDirty, setIsDirty] = useState(false);
 
-  useFormGuard(isDirty);
+  useNavigationGuard(isDirty);
 
   return (
     <div className="space-y-4">

@@ -56,13 +56,13 @@
       "registryDependencies": []
     },
     {
-      "name": "use-form-guard",
+      "name": "use-navigation-guard",
       "type": "registry:hook",
-      "title": "useFormGuard",
+      "title": "useNavigationGuard",
       "description": "フォーム入力中の離脱ガードを支援するカスタムフック",
       "files": [
         {
-          "path": "registry/new-york/use-form-guard/use-form-guard.ts",
+          "path": "registry/new-york/use-navigation-guard/use-navigation-guard.ts",
           "type": "registry:hook"
         }
       ],

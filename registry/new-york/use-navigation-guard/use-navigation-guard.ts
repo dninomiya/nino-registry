@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export const useFormGuard = (isDirty: boolean) => {
+export const useNavigationGuard = (isDirty: boolean) => {
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {
       if (

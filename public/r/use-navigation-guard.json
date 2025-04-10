@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-navigation-guard",
+  "type": "registry:hook",
+  "title": "useNavigationGuard",
+  "description": "フォーム入力中の離脱ガードを支援するカスタムフック",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/new-york/use-navigation-guard/use-navigation-guard.ts",
+      "content": "import { useEffect } from \"react\";\n\nexport const useNavigationGuard = (isDirty: boolean) => {\n  useEffect(() => {\n    const handleClick = (event: MouseEvent) => {\n      if (\n        isDirty &&\n        event.target instanceof Element &&\n        event.target.closest('a:not([target=\"_blank\"])')\n      ) {\n        if (!window.confirm(\"ページを離れても良いですか？\")) {\n          event.preventDefault();\n          event.stopPropagation();\n        }\n      }\n    };\n\n    const handleBeforeUnload = (event: BeforeUnloadEvent) => {\n      if (isDirty) {\n        event.preventDefault();\n        return (event.returnValue = \"\");\n      }\n    };\n\n    window.addEventListener(\"beforeunload\", handleBeforeUnload);\n    window.addEventListener(\"click\", handleClick, true);\n\n    return () => {\n      window.removeEventListener(\"beforeunload\", handleBeforeUnload);\n      window.removeEventListener(\"click\", handleClick, true);\n    };\n  }, [isDirty]);\n};\n",
+      "type": "registry:hook"
+    }
+  ]
+}
