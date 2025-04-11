@@ -1,10 +1,10 @@
-# nino-ui
+# nino/registry
 
 shadcn/ui Registryを活用したWebアプリ開発用スニペット配布プロダクト
 
 ## 概要
 
-nino/uiは、[shadcn/ui Registry](https://ui.shadcn.com/docs/registry)を使い、Webアプリケーション開発に役立つコードを配布しています。
+nino/registryは、[shadcn/ui Registry](https://ui.shadcn.com/docs/registry)を使い、Webアプリケーション開発に役立つコードを配布しています。
 
 ## コンテンツ管理方法
 

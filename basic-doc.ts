@@ -5,10 +5,10 @@ export const basicDoc: DocSchema = [
     title: "はじめに",
     items: [
       {
-        title: "nino/ui とは",
+        title: "nino/registry とは",
         id: "getting-started",
         description:
-          "nino/ui は、Next.js と shadcn/ui をベースにしたコンポーネントとユーティリティのセットです。",
+          "nino/registry は、Next.js と shadcn/ui をベースにしたコンポーネントとユーティリティのセットです。",
       },
       {
         title: "推奨パッケージ",
