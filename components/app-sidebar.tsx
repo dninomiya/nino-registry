@@ -15,7 +15,7 @@ import {
   SidebarMenuItem,
   SidebarFooter,
 } from "@/components/ui/sidebar";
-import { Registry } from "@/lib/types";
+import { DocSchema, Registry } from "@/lib/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SidebarLogo } from "./sidebar-logo/sidebar-logo";
@@ -24,62 +24,25 @@ import { Sun, Moon, Github } from "lucide-react";
 import { useTheme } from "next-themes";
 
 export function AppSidebar({
+  docSchema,
   registry,
   ...props
-}: React.ComponentProps<typeof Sidebar> & { registry: Registry }) {
+}: React.ComponentProps<typeof Sidebar> & {
+  docSchema: DocSchema;
+  registry: Registry;
+}) {
   const pathname = usePathname();
   const { theme, setTheme } = useTheme();
 
   const data = {
-    navMain: [
-      {
-        title: "はじめに",
-        url: "#",
-        items: [
-          {
-            title: "nino/ui とは",
-            url: "/getting-started",
-          },
-        ],
-      },
-      {
-        title: "コンポーネント",
-        url: "#",
-        items: registry.items
-          .filter((item) => item.type === "registry:component")
-          .map((item) => ({
-            title: item.title,
-            url: `/${item.name}`,
-          })),
-      },
-      {
-        title: "カスタムフック",
-        url: "#",
-        items: registry.items
-          .filter((item) => item.type === "registry:hook")
-          .map((item) => ({
-            title: item.title,
-            url: `/${item.name}`,
-          })),
-      },
-      {
-        title: "ユーティリティ",
-        url: "#",
-        items: registry.items
-          .filter((item) => item.type === "registry:lib")
-          .map((item) => ({
-            title: item.title,
-            url: `/${item.name}`,
-          })),
-      },
-    ],
+    navMain: docSchema,
   };
 
   return (
     <Sidebar {...props}>
       <SidebarHeader>
         <SidebarLogo />
-        <SearchForm />
+        <SearchForm docSchema={docSchema} />
       </SidebarHeader>
       <SidebarContent>
         {data.navMain.map((item) => (

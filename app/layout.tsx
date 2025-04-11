@@ -1,11 +1,12 @@
 import { AppSidebar } from "@/components/app-sidebar";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { getDocSchema } from "@/lib/doc-schema";
 import { getRegistry } from "@/lib/registry";
+import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
-import { Inter } from "next/font/google";
+import { Geist, Geist_Mono, Inter } from "next/font/google";
+
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const registry = await getRegistry();
+  const docSchema = await getDocSchema();
 
   return (
     <html lang="ja" suppressHydrationWarning>
@@ -46,7 +48,11 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           <SidebarProvider>
-            <AppSidebar className="h-full" registry={registry} />
+            <AppSidebar
+              className="h-full"
+              docSchema={docSchema}
+              registry={registry}
+            />
             <SidebarInset>{children}</SidebarInset>
           </SidebarProvider>
         </ThemeProvider>
