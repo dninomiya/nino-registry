@@ -20,5 +20,17 @@
       "type": "registry:component"
     }
   ],
+  "meta": {
+    "docs": [
+      {
+        "title": "react-avatar-editor",
+        "url": "https://github.com/mosch/react-avatar-editor#readme"
+      },
+      {
+        "title": "react-dropzone",
+        "url": "https://github.com/react-dropzone/react-dropzone#readme"
+      }
+    ]
+  },
   "docs": "Please install @types/react-avatar-editor as a dev dependency to use this component.\n\npnpm add -D @types/react-avatar-editor"
 }

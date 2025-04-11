@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "preview-link",
+  "type": "registry:component",
+  "title": "Preview Link",
+  "description": "URLのメタデータを取得してプレビューを表示するコンポーネント",
+  "dependencies": [
+    "unfurl.js"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/preview-link/preview-link.tsx",
+      "content": "import { ArrowUpRight } from \"lucide-react\";\nimport Image from \"next/image\";\nimport { unfurl } from \"unfurl.js\";\n\nexport async function PreviewLink({ url }: { url: string }) {\n  try {\n    const metadata = await unfurl(url);\n    const imageURL =\n      metadata.open_graph.images?.[0].url ||\n      metadata.twitter_card?.images?.[0].url;\n    const title = metadata.open_graph.title || metadata.title;\n\n    if (!title) {\n      return <PlainLink url={url} />;\n    }\n\n    return (\n      <RichLink\n        url={url}\n        imageURL={imageURL}\n        title={title}\n        description={metadata.open_graph.description}\n      />\n    );\n  } catch (_) {\n    return <PlainLink url={url} />;\n  }\n}\n\nfunction PlainLink({ url }: { url: string }) {\n  return (\n    <a href={url} className=\"text-muted-foreground text-sm\" target=\"_blank\">\n      {url}\n      <ArrowUpRight className=\"inline ml-0.5\" size={14} />\n    </a>\n  );\n}\n\nfunction RichLink({\n  url,\n  imageURL,\n  title,\n  description,\n}: {\n  url: string;\n  imageURL: string;\n  title: string;\n  description?: string;\n}) {\n  return (\n    <div className=\"flex rounded-lg bg-card border items-center gap-3 w-full p-5 relative\">\n      {imageURL && (\n        <div>\n          <div className=\"aspect-square border relative w-20 shrink-0 rounded-md overflow-hidden\">\n            <Image\n              src={imageURL}\n              unoptimized\n              alt=\"\"\n              fill\n              className=\"object-cover\"\n            />\n          </div>\n        </div>\n      )}\n      <div className=\"flex-1 overflow-hidden\">\n        <h1 className=\"font-bold mb-2 truncate leading-none\">\n          <a href={url} target=\"_blank\">\n            {title}\n            <span className=\"absolute inset-0\" />\n          </a>\n        </h1>\n        {description && (\n          <p className=\"text-muted-foreground text-sm truncate\">\n            {description}\n          </p>\n        )}\n        <p className=\"text-sm text-muted-foreground/60 mt-2 leading-none truncate\">\n          {url}\n        </p>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "docs": [
+      {
+        "title": "unfurl.js",
+        "url": "https://github.com/jacktuck/unfurl#readme"
+      }
+    ]
+  }
+}
