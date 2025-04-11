@@ -10,6 +10,11 @@ export const basicDoc: DocSchema = [
         description:
           "nino/ui は、Next.js と shadcn/ui をベースにしたコンポーネントとユーティリティのセットです。",
       },
+      {
+        title: "推奨パッケージ",
+        id: "recommended-packages",
+        description: "用途ごとにオススメのパッケージをまとめています。",
+      },
     ],
   },
 ];

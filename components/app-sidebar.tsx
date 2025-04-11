@@ -17,9 +17,9 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
-import { GITHUB_URL, X_URL } from "@/lib/constants";
+import { GITHUB_URL, X_URL, YOUTUBE_URL } from "@/lib/constants";
 import { DocSchema } from "@/lib/types";
-import { SiGithub, SiX } from "@icons-pack/react-simple-icons";
+import { SiGithub, SiX, SiYoutube } from "@icons-pack/react-simple-icons";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
@@ -93,6 +93,12 @@ export function AppSidebar({
             <Link href={X_URL} target="_blank" rel="noopener noreferrer">
               <SiX />
               <span className="sr-only">X を開く</span>
+            </Link>
+          </Button>
+          <Button variant="ghost" size="icon" className="size-8" asChild>
+            <Link href={YOUTUBE_URL} target="_blank" rel="noopener noreferrer">
+              <SiYoutube />
+              <span className="sr-only">YouTubeを開く</span>
             </Link>
           </Button>
         </div>
