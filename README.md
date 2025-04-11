@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# nino-ui
 
-## Getting Started
+shadcn/ui Registryを活用したWebアプリ開発用スニペット配布プロダクト
 
-First, run the development server:
+## 概要
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+nino-uiは、shadcn/ui Registryをベースに、Webアプリケーション開発に役立つスニペットやコンポーネントを配布するプロジェクトです。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## コンテンツ管理方法
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 記事ドキュメントの追加
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. `basic-doc.ts`にメタ情報を追加
+2. `/docs`ディレクトリに`doc.mdx`ファイルを作成
 
-## Learn More
+### 配布コードの追加
 
-To learn more about Next.js, take a look at the following resources:
+1. `registry.json`にメタ情報を追加
+2. `registry/`ディレクトリに配布する実装を追加
+3. `docs/`ディレクトリにガイドやデモを追加
+4. `pnpm registry:build` で配布用にレジストリをビルド
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+[registry.json の詳細](https://ui.shadcn.com/docs/registry/registry-item-json)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ライセンス
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT

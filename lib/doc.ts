@@ -1,3 +1,4 @@
+import { basicDoc } from "@/basic-doc";
 import { getRegistry } from "./registry";
 import { DocItem, DocSchema, RegistryItem } from "./types";
 
@@ -24,26 +25,12 @@ const filterRegistryItems = (items: RegistryItem[]) => {
   };
 };
 
-const basicItems: DocSchema = [
-  {
-    title: "はじめに",
-    items: [
-      {
-        title: "nino/ui とは",
-        id: "getting-started",
-        description:
-          "nino/ui は、Next.js と shadcn/ui をベースにしたコンポーネントとユーティリティのセットです。",
-      },
-    ],
-  },
-];
-
 export const getDocSchema = async () => {
   const { items } = await getRegistry();
   const { componentItems, hookItems, libItems } = filterRegistryItems(items);
 
   const schema: DocSchema = [
-    ...basicItems,
+    ...basicDoc,
     {
       title: "コンポーネント",
       items: componentItems.map(transformRegistryItemToDocItem),
