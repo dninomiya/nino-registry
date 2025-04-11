@@ -5,7 +5,7 @@
   "title": "Nav Link",
   "description": "アクティブなリンクを装飾できるリンクコンポーネント",
   "registryDependencies": [
-    "https://ui.dninomiya.com/r/use-is-active-path.json"
+    "https://registry.dninomiya.com/r/use-is-active-path.json"
   ],
   "files": [
     {

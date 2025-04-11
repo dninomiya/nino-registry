@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "ninoui",
-  "homepage": "https://ui.dninomiya.com",
-  "author": "nino (https://ui.dninomiya.com)",
+  "homepage": "https://registry.dninomiya.com",
+  "author": "nino (https://registry.dninomiya.com)",
   "items": [
     {
       "name": "nav-link",
@@ -16,7 +16,7 @@
         }
       ],
       "registryDependencies": [
-        "https://ui.dninomiya.com/r/use-is-active-path.json"
+        "https://registry.dninomiya.com/r/use-is-active-path.json"
       ]
     },
     {

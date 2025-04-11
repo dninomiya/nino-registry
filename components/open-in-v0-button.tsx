@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 
 export function OpenInV0Button({ id }: { id: string }) {
-  const url = `https://ui.dninomiya.com/r/${id}.json`;
+  const url = `https://registry.dninomiya.com/r/${id}.json`;
 
   return (
     <Button
