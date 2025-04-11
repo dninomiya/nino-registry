@@ -52,10 +52,10 @@ export function SearchForm({ docSchema }: { docSchema: DocSchema }) {
                 {section.items.map((item) => (
                   <CommandItem
                     onSelect={() => {
-                      router.push(item.url);
+                      router.push(`/${item.id}`);
                       setOpen(false);
                     }}
-                    key={item.url}
+                    key={item.id}
                   >
                     {item.title}
                   </CommandItem>
