@@ -30,7 +30,7 @@ export default async function DocPage({
   }
 
   return (
-    <article className="container max-w-4xl prose dark:prose-invert py-12 w-full">
+    <article className="container max-w-4xl prose dark:prose-invert py-8 md:py-12 w-full">
       <header className="not-prose mb-8">
         <div className="space-y-2">
           <h1 className="scroll-m-20 text-3xl font-bold tracking-tight">

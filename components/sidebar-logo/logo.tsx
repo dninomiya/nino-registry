@@ -3,7 +3,7 @@ import Image from "next/image";
 import logoImage from "./logo.jpg";
 import Link from "next/link";
 
-export function SidebarLogo() {
+export function Logo() {
   return (
     <Link
       href="/"

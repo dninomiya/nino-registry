@@ -1,11 +1,16 @@
 import { AppSidebar } from "@/components/app-sidebar";
-import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+import {
+  SidebarInset,
+  SidebarProvider,
+  SidebarTrigger,
+} from "@/components/ui/sidebar";
 import { getDocSchema } from "@/lib/doc";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 
 import "./globals.css";
+import { Logo } from "@/components/sidebar-logo/logo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -47,7 +52,13 @@ export default async function RootLayout({
         >
           <SidebarProvider>
             <AppSidebar className="h-full" docSchema={docSchema} />
-            <SidebarInset>{children}</SidebarInset>
+            <SidebarInset>
+              <div className="md:hidden flex items-center gap-2 px-4 py-2">
+                <SidebarTrigger />
+                <Logo />
+              </div>
+              {children}
+            </SidebarInset>
           </SidebarProvider>
         </ThemeProvider>
       </body>

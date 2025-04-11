@@ -4,7 +4,6 @@ import * as React from "react";
 
 import { SearchForm } from "@/components/search-form";
 import { Button } from "@/components/ui/button";
-import { SiGithub, SiX } from "@icons-pack/react-simple-icons";
 import {
   Sidebar,
   SidebarContent,
@@ -16,14 +15,16 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  useSidebar,
 } from "@/components/ui/sidebar";
+import { GITHUB_URL, X_URL } from "@/lib/constants";
 import { DocSchema } from "@/lib/types";
-import { Github, Moon, Sun } from "lucide-react";
+import { SiGithub, SiX } from "@icons-pack/react-simple-icons";
+import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { SidebarLogo } from "./sidebar-logo/sidebar-logo";
-import { GITHUB_URL, X_URL } from "@/lib/constants";
+import { Logo } from "./sidebar-logo/logo";
 export function AppSidebar({
   docSchema,
   ...props
@@ -32,7 +33,7 @@ export function AppSidebar({
 }) {
   const pathname = usePathname();
   const { theme, setTheme } = useTheme();
-
+  const { toggleSidebar, isMobile } = useSidebar();
   const data = {
     navMain: docSchema,
   };
@@ -40,7 +41,7 @@ export function AppSidebar({
   return (
     <Sidebar {...props}>
       <SidebarHeader>
-        <SidebarLogo />
+        <Logo />
         <SearchForm docSchema={docSchema} />
       </SidebarHeader>
       <SidebarContent>
@@ -54,6 +55,11 @@ export function AppSidebar({
                     <SidebarMenuButton
                       asChild
                       isActive={pathname === `/${item.id}`}
+                      onClick={() => {
+                        if (isMobile) {
+                          toggleSidebar();
+                        }
+                      }}
                     >
                       <Link href={`/${item.id}`}>{item.title}</Link>
                     </SidebarMenuButton>
