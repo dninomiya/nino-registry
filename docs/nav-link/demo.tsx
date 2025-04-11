@@ -1,5 +1,5 @@
 import { buttonVariants } from "@/components/ui/button";
-import { NavLink } from "@/registry/new-york/nav-link/nav-link";
+import { NavLink } from "@/components/nav-link";
 
 const links = [
   { href: "/", label: "Home" },

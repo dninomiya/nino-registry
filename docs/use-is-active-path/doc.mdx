@@ -1,100 +1,31 @@
 import { Demo } from "./demo";
 
 <DemoCanvas>
-  <Demo />
+  <DemoPreview>
+    <Demo />
+  </DemoPreview>
+  <DemoCode>
+    ```tsx file=./demo.tsx
+    ```
+  </DemoCode>
 </DemoCanvas>
 
-## 使い方
+## インストール
+
+```bash
+pnpx shadcn@latest add https://ui.dninomiya.com/r/use-is-active-path.json
+```
+
+## 使用法
 
 ```tsx
 import { useIsActivePath } from "@/hooks/use-is-active-path";
 
-export default function Component() {
-  const isActivePath = useIsActivePath();
+const isActivePath = useIsActivePath();
 
-  // パスの前方一致で判定
-  const isActive = isActivePath("/dashboard");
+// パスの前方一致で判定
+const isActive = isActivePath("/dashboard");
 
-  // 完全一致で判定
-  const isExactActive = isActivePath("/dashboard", { exact: true });
-
-  return (
-    <div>
-      <p>アクティブ: {isActive ? "はい" : "いいえ"}</p>
-      <p>完全一致: {isExactActive ? "はい" : "いいえ"}</p>
-    </div>
-  );
-}
+// 完全一致で判定
+const isExactActive = isActivePath("/dashboard", { exact: true });
 ```
-
-## 機能
-
-- 現在のパスと指定されたパスの比較
-- 前方一致または完全一致での判定
-- 末尾のスラッシュを無視した比較
-
-## パラメータ
-
-| パラメータ | 型 | 説明 |
-|-----------|----|------|
-| `comparePath` | string | 比較するパス |
-| `options.exact` | boolean | `true`の場合、完全一致でのみ`true`を返します |
-
-## 戻り値
-
-`boolean` - パスが一致する場合は`true`、それ以外は`false`
-
-## 使用例
-
-### ナビゲーションリンクでの使用
-
-```tsx
-import { useIsActivePath } from "@/hooks/use-is-active-path";
-import { cn } from "@/lib/utils";
-
-export function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
-  const isActivePath = useIsActivePath();
-  const isActive = isActivePath(href);
-
-  return (
-    <Link
-      href={href}
-      className={cn(
-        "text-gray-600 hover:text-gray-900",
-        isActive && "text-blue-600 font-bold"
-      )}
-    >
-      {children}
-    </Link>
-  );
-}
-```
-
-### サブメニューの表示制御
-
-```tsx
-import { useIsActivePath } from "@/hooks/use-is-active-path";
-
-export function SubMenu() {
-  const isActivePath = useIsActivePath();
-  const isDashboardActive = isActivePath("/dashboard");
-
-  return (
-    <div>
-      {isDashboardActive && (
-        <ul>
-          <li>ダッシュボードメニュー1</li>
-          <li>ダッシュボードメニュー2</li>
-        </ul>
-      )}
-    </div>
-  );
-}
-```
-
-## 注意点
-
-- パスの比較は大文字小文字を区別します
-- 末尾のスラッシュは自動的に削除されます
-- `exact`オプションを使用する場合は、完全一致でのみ`true`を返します
-- Next.jsの`usePathname`フックに依存しています

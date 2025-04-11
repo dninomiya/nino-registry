@@ -1,9 +1,7 @@
 "use client";
 
-import { useNavigationGuard } from "@/registry/new-york/use-navigation-guard/use-navigation-guard";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import {
   Card,
   CardContent,
@@ -11,8 +9,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Info } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useNavigationGuard } from "@/hooks/use-navigation-guard";
+import { cn } from "@/lib/utils";
+import { Shield } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Demo() {
@@ -30,12 +32,33 @@ export default function Demo() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <Alert>
-            <Info className="size-4" />
-            <AlertDescription>
-              フォームの状態: {isDirty ? "変更あり" : "変更なし"}
+          <Alert
+            className={cn(
+              isDirty
+                ? "border-sky-500 text-sky-500 duration-500"
+                : "text-muted-foreground",
+              "transition",
+            )}
+          >
+            <Shield className="size-4" />
+            <AlertDescription className="text-current transition-colors duration-500">
+              ガードの状態: {isDirty ? "有効" : "無効"}
             </AlertDescription>
           </Alert>
+
+          <div className="flex gap-2">
+            <Button variant="outline" size="sm" asChild>
+              <Link href="/">ホームに戻る</Link>
+            </Button>
+
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => window.location.reload()}
+            >
+              ブラウザリロード
+            </Button>
+          </div>
 
           <form
             className="space-y-4"

@@ -39,7 +39,19 @@
         "button",
         "dialog",
         "slider"
-      ]
+      ],
+      "meta": {
+        "docs": [
+          {
+            "title": "react-avatar-editor",
+            "url": "https://github.com/mosch/react-avatar-editor#readme"
+          },
+          {
+            "title": "react-dropzone",
+            "url": "https://github.com/react-dropzone/react-dropzone#readme"
+          }
+        ]
+      }
     },
     {
       "name": "use-is-active-path",
@@ -79,7 +91,38 @@
           "path": "registry/new-york/get-base-url/get-base-url.ts",
           "type": "registry:lib"
         }
-      ]
+      ],
+      "meta": {
+        "docs": [
+          {
+            "title": "Vercel",
+            "url": "https://vercel.com/docs/environment-variables/system-environment-variables"
+          }
+        ]
+      }
+    },
+    {
+      "name": "preview-link",
+      "type": "registry:component",
+      "title": "Preview Link",
+      "description": "URLのメタデータを取得してプレビューを表示するコンポーネント",
+      "files": [
+        {
+          "path": "registry/new-york/preview-link/preview-link.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "dependencies": [
+        "unfurl.js"
+      ],
+      "meta": {
+        "docs": [
+          {
+            "title": "unfurl.js",
+            "url": "https://github.com/jacktuck/unfurl#readme"
+          }
+        ]
+      }
     }
   ]
 }

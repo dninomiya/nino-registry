@@ -1,6 +1,6 @@
 "use client";
 
-import { getBaseURL } from "@/registry/new-york/get-base-url/get-base-url";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 import {
   Card,
   CardContent,
@@ -8,11 +8,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Alert, AlertDescription } from "@/components/ui/alert";
+import { getBaseURL } from "@/registry/new-york/get-base-url/get-base-url";
 import { Info } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
 
 export default function Demo() {
   const [useCommitURL, setUseCommitURL] = useState(false);
@@ -32,15 +30,6 @@ export default function Demo() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="flex items-center space-x-2">
-            <Switch
-              id="use-commit-url"
-              checked={useCommitURL}
-              onCheckedChange={setUseCommitURL}
-            />
-            <Label htmlFor="use-commit-url">コミットURLを使用</Label>
-          </div>
-
           <Alert>
             <Info className="size-4" />
             <AlertDescription>

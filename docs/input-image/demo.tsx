@@ -1,6 +1,6 @@
 "use client";
 
-import { InputImage } from "@/registry/new-york/input-image/input-image";
+import { InputImage } from "@/components/input-image";
 import { useState } from "react";
 
 export default function Demo() {

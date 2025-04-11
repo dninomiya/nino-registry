@@ -1,14 +1,22 @@
 import Demo from "./demo";
 
-<DemoCanvas center>
-  <Demo />
+<DemoCanvas>
+  <DemoPreview>
+    <Demo />
+  </DemoPreview>
+  <DemoCode>
+    ```tsx file=./demo.tsx
+    ```
+  </DemoCode>
 </DemoCanvas>
 
-## 使い方
+## インストール
 
-`InputImage`コンポーネントは、画像のプレビューとトリミング機能を提供します。
+```bash
+pnpx shadcn@latest add https://ui.dninomiya.com/r/input-image.json
+```
 
-### 基本的な使い方
+## 使用法
 
 ```tsx
 "use client";
@@ -27,7 +35,9 @@ export default function Demo() {
 }
 ```
 
-### Formとの連携例
+## 例
+
+### Formとの連携
 
 ```tsx
 "use client";
@@ -75,6 +85,8 @@ export default function FormExample() {
 }
 ```
 
+## 詳細
+
 ### プロパティ
 
 | プロパティ | 型 | デフォルト値 | 説明 |
@@ -86,13 +98,6 @@ export default function FormExample() {
 | `onChange` | (value: string) => void | - | 画像が変更された時のコールバック関数 |
 | `maxSize` | number | 4MB | 画像の最大サイズ |
 
-### 機能
-
-- 画像のプレビュー表示
-- トリミング機能（スケール調整可能）
-- 画像の削除機能
-- JPEG、PNG、WebP形式のサポート
-
 ### 注意点
 
 - トリミング後の画像は自動的に指定された`resultWidth`にリサイズされます
@@ -101,16 +106,3 @@ export default function FormExample() {
 - トリミング後の画像はJPG形式で出力されます（PNG形式の場合、切り抜き後にファイルサイズが大きくなる可能性があるため）
 
 > **参考**: [react-avatar-editorの既知の問題](https://github.com/mosch/react-avatar-editor/issues/172)
-
-### カスタマイズ例
-
-```tsx
-<InputImage
-  width={200}
-  aspectRatio={16/9}
-  resultWidth={800}
-  value={imageUrl}
-  onChange={(newImage) => setImageUrl(newImage)}
-/>
-```
-

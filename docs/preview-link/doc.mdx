@@ -1,0 +1,48 @@
+import Demo from "./demo";
+import NoMetaDemo from "./no-meta-demo";
+
+<DemoCanvas>
+  <DemoPreview>
+    <Demo />
+  </DemoPreview>
+  <DemoCode>
+    ```tsx file=./demo.tsx
+    ```
+  </DemoCode>
+</DemoCanvas>
+
+## インストール
+
+```bash
+pnpx shadcn@latest add https://ui.dninomiya.com/r/preview-link.json
+```
+
+## 使用法
+
+```tsx
+import { PreviewLink } from "@/registry/new-york/preview-link";
+
+export default function Page() {
+  return <PreviewLink url="https://example.com" />;
+}
+```
+
+## 例
+
+### プレビューが取得できないリンク
+
+meta情報が取得できないリンクは、プレビューが表示されません。
+
+<DemoCanvas>
+  <DemoPreview>
+    <NoMetaDemo />
+  </DemoPreview>
+  <DemoCode>
+    ```tsx file=./no-meta-demo.tsx
+    ```
+  </DemoCode>
+</DemoCanvas>
+
+## 補足
+
+[openGraphScraper](https://github.com/jshemas/openGraphScraper#readme) の方がシェアが高いですが x.com のメタ情報が取得できないため、[unfurl.js](https://github.com/jacktuck/unfurl#readme) を使用しています。
