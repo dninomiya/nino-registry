@@ -25,17 +25,3 @@ export default function Demo() {
 ```
 
 アクティブ状態のスタイリングは、`aria-[current=page]`属性セレクタを使用して行います。
-
-## 詳細
-
-### プロパティ
-
-| プロパティ | 型 | デフォルト値 | 説明 |
-|-----------|----|------------|------|
-| `href` | string | - | リンク先のパス（必須） |
-| `children` | React.ReactNode | - | リンクの内容 |
-| `className` | string | - | 追加のCSSクラス |
-| `exact` | boolean | false | `true`の場合、パスが完全一致した時のみアクティブ状態になります |
-| `ref` | React.Ref&lt;HTMLAnchorElement&gt; | - | リンク要素への参照 |
-
-その他のプロパティは`next/link`の`Link`コンポーネントのプロパティを継承します。
