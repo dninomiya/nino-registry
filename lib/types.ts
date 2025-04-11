@@ -5,8 +5,15 @@ export type Registry = Awaited<ReturnType<typeof getRegistry>>;
 export type RegistryItem = Registry["items"][number];
 
 export type DocItem = {
+  id: string;
   title: string;
-  url: string;
+  description: string;
+  meta?: {
+    docs: {
+      title: string;
+      url: string;
+    }[];
+  };
 };
 
 export type DocSchema = {

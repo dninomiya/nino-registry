@@ -1,0 +1,72 @@
+import { getRegistry } from "./registry";
+import { DocItem, DocSchema, RegistryItem } from "./types";
+
+const transformRegistryItemToDocItem = (item: RegistryItem): DocItem => {
+  return {
+    id: item.name,
+    title: item.title,
+    description: item.description,
+    meta: item.meta,
+  };
+};
+
+const filterRegistryItems = (items: RegistryItem[]) => {
+  const componentItems = items.filter(
+    (item) => item.type === "registry:component",
+  );
+  const hookItems = items.filter((item) => item.type === "registry:hook");
+  const libItems = items.filter((item) => item.type === "registry:lib");
+
+  return {
+    componentItems,
+    hookItems,
+    libItems,
+  };
+};
+
+const basicItems: DocSchema = [
+  {
+    title: "はじめに",
+    items: [
+      {
+        title: "nino/ui とは",
+        id: "getting-started",
+        description:
+          "nino/ui は、Next.js と shadcn/ui をベースにしたコンポーネントとユーティリティのセットです。",
+      },
+    ],
+  },
+];
+
+export const getDocSchema = async () => {
+  const { items } = await getRegistry();
+  const { componentItems, hookItems, libItems } = filterRegistryItems(items);
+
+  const schema: DocSchema = [
+    ...basicItems,
+    {
+      title: "コンポーネント",
+      items: componentItems.map(transformRegistryItemToDocItem),
+    },
+    {
+      title: "フック",
+      items: hookItems.map(transformRegistryItemToDocItem),
+    },
+    {
+      title: "ユーティリティ",
+      items: libItems.map(transformRegistryItemToDocItem),
+    },
+  ];
+
+  return schema;
+};
+
+export const allDocItems = async () => {
+  const schema = await getDocSchema();
+  return schema.flatMap((section) => section.items);
+};
+
+export const getDoc = async (id: string) => {
+  const allItems = await allDocItems();
+  return allItems.find((item) => item.id === id);
+};

@@ -4,6 +4,7 @@ import * as React from "react";
 
 import { SearchForm } from "@/components/search-form";
 import { Button } from "@/components/ui/button";
+import { SiGithub, SiX } from "@icons-pack/react-simple-icons";
 import {
   Sidebar,
   SidebarContent,
@@ -22,7 +23,7 @@ import { useTheme } from "next-themes";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SidebarLogo } from "./sidebar-logo/sidebar-logo";
-
+import { GITHUB_URL, X_URL } from "@/lib/constants";
 export function AppSidebar({
   docSchema,
   ...props
@@ -50,8 +51,11 @@ export function AppSidebar({
               <SidebarMenu>
                 {item.items.map((item) => (
                   <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild isActive={pathname === item.url}>
-                      <Link href={item.url}>{item.title}</Link>
+                    <SidebarMenuButton
+                      asChild
+                      isActive={pathname === `/${item.id}`}
+                    >
+                      <Link href={`/${item.id}`}>{item.title}</Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                 ))}
@@ -61,29 +65,30 @@ export function AppSidebar({
         ))}
       </SidebarContent>
       <SidebarFooter>
-        <div className="flex items-center justify-end px-4 py-2">
-          <div className="flex items-center gap-2">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="size-8"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            >
-              <Sun className="size-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-              <Moon className="absolute size-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-              <span className="sr-only">テーマを切り替え</span>
-            </Button>
-            <Button variant="ghost" size="icon" className="size-8" asChild>
-              <Link
-                href="https://github.com/dninomiya/nino-ui"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Github className="size-4" />
-                <span className="sr-only">GitHubリポジトリを開く</span>
-              </Link>
-            </Button>
-          </div>
+        <div className="flex items-center gap-2 px-2 py-2">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="size-8"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          >
+            <Sun className="size-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+            <Moon className="absolute size-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+            <span className="sr-only">テーマを切り替え</span>
+          </Button>
+          <span className="flex-1"></span>
+          <Button variant="ghost" size="icon" className="size-8" asChild>
+            <Link href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
+              <SiGithub />
+              <span className="sr-only">GitHubリポジトリを開く</span>
+            </Link>
+          </Button>
+          <Button variant="ghost" size="icon" className="size-8" asChild>
+            <Link href={X_URL} target="_blank" rel="noopener noreferrer">
+              <SiX />
+              <span className="sr-only">X を開く</span>
+            </Link>
+          </Button>
         </div>
       </SidebarFooter>
     </Sidebar>

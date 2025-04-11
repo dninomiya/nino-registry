@@ -1,20 +1,11 @@
-import { getRegistry } from "@/lib/registry";
-import Link from "next/link";
+import { allDocItems } from "@/lib/doc";
+import { redirect } from "next/navigation";
 
 export default async function Home() {
-  const registry = await getRegistry();
+  const items = await allDocItems();
+  const firstItem = items[0];
 
-  return (
-    <div className="container mx-auto">
-      <h1>Registry</h1>
-      {registry.items.map((item) => (
-        <div key={item.name}>
-          <h2>
-            <Link href={`/${item.name}`}>{item.name}</Link>
-          </h2>
-          <p>{item.description}</p>
-        </div>
-      ))}
-    </div>
-  );
+  redirect(`/${firstItem.id}`);
+
+  return null;
 }

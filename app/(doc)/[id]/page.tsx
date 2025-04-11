@@ -1,15 +1,15 @@
 import { Badge } from "@/components/ui/badge";
-import { getRegistryItem } from "@/lib/registry";
+import { allDocItems, getDoc } from "@/lib/doc";
 import { ExternalLink } from "lucide-react";
 import { notFound } from "next/navigation";
 
 export const generateMetadata = async ({
   params,
 }: {
-  params: Promise<{ name: string }>;
+  params: Promise<{ id: string }>;
 }) => {
-  const { name } = await params;
-  const item = await getRegistryItem(name);
+  const { id } = await params;
+  const item = await getDoc(id);
   return {
     title: item?.title,
     description: item?.description,
@@ -19,11 +19,11 @@ export const generateMetadata = async ({
 export default async function DocPage({
   params,
 }: {
-  params: Promise<{ name: string }>;
+  params: Promise<{ id: string }>;
 }) {
-  const { name } = await params;
-  const Doc = (await import(`@/docs/${name}/doc.mdx`)).default;
-  const item = await getRegistryItem(name);
+  const { id } = await params;
+  const Doc = (await import(`@/docs/${id}/doc.mdx`)).default;
+  const item = await getDoc(id);
 
   if (!item) {
     notFound();
@@ -55,4 +55,11 @@ export default async function DocPage({
       <Doc />
     </article>
   );
+}
+
+export async function generateStaticParams() {
+  const items = await allDocItems();
+  return items.map((item) => ({
+    id: item.id,
+  }));
 }
