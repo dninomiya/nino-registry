@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { getBaseURL } from "@/registry/new-york/get-base-url/get-base-url";
+import { getBaseURL } from "@/lib/get-base-url";
 import { Info } from "lucide-react";
 import { useEffect, useState } from "react";
 
