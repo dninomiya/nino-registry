@@ -3,9 +3,11 @@
 import * as React from "react";
 
 import { SearchForm } from "@/components/search-form";
+import { Button } from "@/components/ui/button";
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
@@ -13,23 +15,19 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarFooter,
 } from "@/components/ui/sidebar";
-import { DocSchema, Registry } from "@/lib/types";
+import { DocSchema } from "@/lib/types";
+import { Github, Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SidebarLogo } from "./sidebar-logo/sidebar-logo";
-import { Button } from "@/components/ui/button";
-import { Sun, Moon, Github } from "lucide-react";
-import { useTheme } from "next-themes";
 
 export function AppSidebar({
   docSchema,
-  registry,
   ...props
 }: React.ComponentProps<typeof Sidebar> & {
   docSchema: DocSchema;
-  registry: Registry;
 }) {
   const pathname = usePathname();
   const { theme, setTheme } = useTheme();

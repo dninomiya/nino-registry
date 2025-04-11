@@ -1,7 +1,6 @@
 import { AppSidebar } from "@/components/app-sidebar";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { getDocSchema } from "@/lib/doc-schema";
-import { getRegistry } from "@/lib/registry";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
@@ -33,7 +32,6 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const registry = await getRegistry();
   const docSchema = await getDocSchema();
 
   return (
@@ -48,11 +46,7 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           <SidebarProvider>
-            <AppSidebar
-              className="h-full"
-              docSchema={docSchema}
-              registry={registry}
-            />
+            <AppSidebar className="h-full" docSchema={docSchema} />
             <SidebarInset>{children}</SidebarInset>
           </SidebarProvider>
         </ThemeProvider>
