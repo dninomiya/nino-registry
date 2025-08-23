@@ -18,7 +18,8 @@ export const useNavigationGuard = (isDirty: boolean) => {
     const handleBeforeUnload = (event: BeforeUnloadEvent) => {
       if (isDirty) {
         event.preventDefault();
-        return (event.returnValue = "");
+        event.returnValue = "";
+        return;
       }
     };
 
