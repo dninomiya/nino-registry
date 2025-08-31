@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "tsc --noEmit && next lint",
-    "registry:build": "shadcn build"
+    "registry:build": "pnpx shadcn@latest build"
   },
   "dependencies": {
     "@hookform/resolvers": "^4.1.3",

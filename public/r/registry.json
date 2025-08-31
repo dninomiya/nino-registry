@@ -1,0 +1,128 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "ninoui",
+  "homepage": "https://registry.dninomiya.com",
+  "author": "nino (https://registry.dninomiya.com)",
+  "items": [
+    {
+      "name": "nav-link",
+      "type": "registry:component",
+      "title": "Nav Link",
+      "description": "アクティブなリンクを装飾できるリンクコンポーネント",
+      "files": [
+        {
+          "path": "registry/new-york/nav-link/nav-link.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "https://registry.dninomiya.com/r/use-is-active-path.json"
+      ]
+    },
+    {
+      "name": "input-image",
+      "type": "registry:component",
+      "title": "Input Image",
+      "description": "画像を選択できるコンポーネント",
+      "files": [
+        {
+          "path": "registry/new-york/input-image/input-image.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "docs": "Please install @types/react-avatar-editor as a dev dependency to use this component.\n\npnpm add -D @types/react-avatar-editor",
+      "dependencies": [
+        "react-avatar-editor",
+        "react-dropzone"
+      ],
+      "registryDependencies": [
+        "button",
+        "dialog",
+        "slider"
+      ],
+      "meta": {
+        "docs": [
+          {
+            "title": "react-avatar-editor",
+            "url": "https://github.com/mosch/react-avatar-editor#readme"
+          },
+          {
+            "title": "react-dropzone",
+            "url": "https://github.com/react-dropzone/react-dropzone#readme"
+          }
+        ]
+      }
+    },
+    {
+      "name": "use-is-active-path",
+      "type": "registry:hook",
+      "title": "useIsActivePath",
+      "description": "現在のパスが指定されたパスと一致するかどうかを判定するカスタムフック",
+      "files": [
+        {
+          "path": "registry/new-york/use-is-active-path/use-is-active-path.ts",
+          "type": "registry:hook"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "use-navigation-guard",
+      "type": "registry:hook",
+      "title": "useNavigationGuard",
+      "description": "フォーム入力中の離脱ガードを支援するカスタムフック",
+      "files": [
+        {
+          "path": "registry/new-york/use-navigation-guard/use-navigation-guard.ts",
+          "type": "registry:hook"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "get-base-url",
+      "type": "registry:lib",
+      "title": "getBaseURL",
+      "description": "Vercel ホスティング、カスタムドメインに対応したベース URLを取得する関数",
+      "files": [
+        {
+          "path": "registry/new-york/get-base-url/get-base-url.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "meta": {
+        "docs": [
+          {
+            "title": "Vercel",
+            "url": "https://vercel.com/docs/environment-variables/system-environment-variables"
+          }
+        ]
+      }
+    },
+    {
+      "name": "preview-link",
+      "type": "registry:component",
+      "title": "Preview Link",
+      "description": "URLのメタデータを取得してプレビューを表示するコンポーネント",
+      "files": [
+        {
+          "path": "registry/new-york/preview-link/preview-link.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "dependencies": [
+        "unfurl.js"
+      ],
+      "meta": {
+        "docs": [
+          {
+            "title": "unfurl.js",
+            "url": "https://github.com/jacktuck/unfurl#readme"
+          }
+        ]
+      }
+    }
+  ]
+}
