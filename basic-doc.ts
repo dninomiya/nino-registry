@@ -11,6 +11,12 @@ export const basicDoc: DocSchema = [
           "nino/registry は、Next.js と shadcn/ui をベースにしたコンポーネントとユーティリティのセットです。",
       },
       {
+        title: "MCP",
+        id: "mcp",
+        description:
+          "MCP と nino/registry を連携させることでAI経由で操作できます。",
+      },
+      {
         title: "推奨パッケージ",
         id: "recommended-packages",
         description: "用途ごとにオススメのパッケージをまとめています。",

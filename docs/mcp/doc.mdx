@@ -1,0 +1,28 @@
+たとえば以下のような依頼が通るようになります。
+
+- ninoui のコンポーネントリストを教えて
+- ninoui の input-image を使ったアバターフォームを作って
+
+## 接続方法
+
+1. プロジェクト環境で shadcn MCP を有効にする。(Claude Code, Cursor などに対応)
+
+```bash
+pnpx shadcn@latest add mcp
+```
+
+2. プロジェクトにレジストリを登録する
+
+`components.json` にレジストリを登録する。`{name}` のままでOKです。
+
+```json
+{
+  "registry": [
+    {
+      "url": "https://registry.dninomiya.com/r/{name}.json"
+    }
+  ]
+}
+```
+
+以上でセットアップは完了です。
