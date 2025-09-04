@@ -40,25 +40,23 @@ export default function FaqSection() {
 
   return (
     <MarketingSection>
-      <div className="py-16 px-8 bg-white">
-        <MarketingSectionContent>
-          <div className="max-w-4xl mx-auto">
-            <MarketingSectionTitle>よくある質問</MarketingSectionTitle>
-            <Accordion type="single" collapsible className="space-y-4">
-              {faqs.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`}>
-                  <AccordionTrigger className="text-left">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-gray-600">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-        </MarketingSectionContent>
-      </div>
+      <MarketingSectionContent>
+        <div className="max-w-4xl mx-auto">
+          <MarketingSectionTitle>よくある質問</MarketingSectionTitle>
+          <Accordion type="single" collapsible className="space-y-4">
+            {faqs.map((faq, index) => (
+              <AccordionItem key={index} value={`item-${index}`}>
+                <AccordionTrigger className="text-left">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </MarketingSectionContent>
     </MarketingSection>
   );
 }

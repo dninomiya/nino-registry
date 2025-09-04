@@ -5,6 +5,19 @@
   "author": "nino (https://registry.dninomiya.com)",
   "items": [
     {
+      "name": "marketing-kit",
+      "type": "registry:page",
+      "title": "マーケティングキット",
+      "description": "ランディングページや関連ページのセット",
+      "files": [
+        {
+          "path": "registry/new-york/marketing-kit/page.tsx",
+          "type": "registry:page",
+          "target": "app/(marketing)/page.tsx"
+        }
+      ]
+    },
+    {
       "name": "nav-link",
       "type": "registry:component",
       "title": "Nav Link",

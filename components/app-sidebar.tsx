@@ -25,6 +25,7 @@ import { useTheme } from "next-themes";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Logo } from "./sidebar-logo/logo";
+
 export function AppSidebar({
   docSchema,
   ...props

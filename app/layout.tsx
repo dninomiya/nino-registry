@@ -1,15 +1,8 @@
-import { AppSidebar } from "@/components/app-sidebar";
-import {
-  SidebarInset,
-  SidebarProvider,
-  SidebarTrigger,
-} from "@/components/ui/sidebar";
 import { getDocSchema } from "@/lib/doc";
+import { getBaseURL } from "@/lib/get-base-url";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
-import { Logo } from "@/components/sidebar-logo/logo";
-import { getBaseURL } from "@/lib/get-base-url";
 
 import "./globals.css";
 
@@ -55,16 +48,7 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <SidebarProvider>
-            <AppSidebar className="h-full" docSchema={docSchema} />
-            <SidebarInset>
-              <div className="md:hidden flex items-center gap-2 px-4 py-2">
-                <SidebarTrigger />
-                <Logo />
-              </div>
-              {children}
-            </SidebarInset>
-          </SidebarProvider>
+          {children}
         </ThemeProvider>
       </body>
     </html>

@@ -1,5 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import MarketingSection, {
+  MarketingSectionDescription,
+  MarketingSectionHeader,
   MarketingSectionTitle,
   MarketingSectionContent,
 } from "../marketing-section/marketing-section";
@@ -28,24 +30,28 @@ export default function FeaturesSection() {
 
   return (
     <MarketingSection>
-      <div className="py-16 px-8">
-        <MarketingSectionContent>
-          <MarketingSectionTitle>主な機能</MarketingSectionTitle>
-          <div className="grid md:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <Card key={index} className="text-center">
-                <CardHeader>
-                  <div className="text-4xl mb-4">{feature.icon}</div>
-                  <CardTitle>{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{feature.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </MarketingSectionContent>
-      </div>
+      <MarketingSectionHeader>
+        <MarketingSectionTitle>主な機能</MarketingSectionTitle>
+        <MarketingSectionDescription>
+          lorem ipsum dolor sit amet consectetur
+        </MarketingSectionDescription>
+      </MarketingSectionHeader>
+
+      <MarketingSectionContent>
+        <div className="grid md:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <Card key={index} className="text-center">
+              <CardHeader>
+                <div className="text-4xl mb-4">{feature.icon}</div>
+                <CardTitle>{feature.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">{feature.description}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </MarketingSectionContent>
     </MarketingSection>
   );
 }

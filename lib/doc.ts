@@ -17,20 +17,27 @@ const filterRegistryItems = (items: RegistryItem[]) => {
   );
   const hookItems = items.filter((item) => item.type === "registry:hook");
   const libItems = items.filter((item) => item.type === "registry:lib");
+  const pageItems = items.filter((item) => item.type === "registry:page");
 
   return {
     componentItems,
     hookItems,
     libItems,
+    pageItems,
   };
 };
 
 export const getDocSchema = async () => {
   const { items } = await getRegistry();
-  const { componentItems, hookItems, libItems } = filterRegistryItems(items);
+  const { componentItems, hookItems, libItems, pageItems } =
+    filterRegistryItems(items);
 
   const schema: DocSchema = [
     ...basicDoc,
+    {
+      title: "ページ",
+      items: pageItems.map(transformRegistryItemToDocItem),
+    },
     {
       title: "コンポーネント",
       items: componentItems.map(transformRegistryItemToDocItem),
