@@ -11,25 +11,17 @@ import {
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
-import { Check } from "lucide-react";
-import { useEffect, useState } from "react";
 import MarketingSection, {
   MarketingSectionContent,
   MarketingSectionDescription,
   MarketingSectionHeader,
   MarketingSectionTitle,
 } from "@/registry/new-york/marketing-section/marketing-section";
+import { Check } from "lucide-react";
+import { useState } from "react";
 
 export default function PricingSection() {
   const [annual, setAnnual] = useState(false);
-  const [title, setTitle] = useState("料金プラン");
-
-  useEffect(() => {
-    // 3秒まつ
-    setTimeout(() => {
-      document.title = "年払いプラン";
-    }, 3000);
-  }, []);
 
   const plans = [
     {
