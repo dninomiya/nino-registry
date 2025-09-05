@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "mobile-nav",
+  "type": "registry:component",
+  "title": "Mobile Nav",
+  "description": "モバイルナビゲーションコンポーネント",
+  "registryDependencies": [
+    "button",
+    "sheet"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/mobile-nav/mobile-nav.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\nimport { Sheet, SheetContent, SheetTrigger } from \"@/components/ui/sheet\";\nimport { Menu } from \"lucide-react\";\nimport Link from \"next/link\";\n\nconst navs = [\n  {\n    title: \"機能\",\n    href: \"#features\",\n  },\n  {\n    title: \"料金プラン\",\n    href: \"#pricing\",\n  },\n  {\n    title: \"利用者の声\",\n    href: \"#testimonials\",\n  },\n  {\n    title: \"よくある質問\",\n    href: \"#faq\",\n  },\n  {\n    title: \"お問い合わせ\",\n    href: \"#cta\",\n  },\n];\n\nexport default function MobileNav() {\n  return (\n    <Sheet>\n      <SheetTrigger asChild>\n        <Button variant=\"ghost\" className=\"md:hidden\">\n          <Menu />\n          <span className=\"sr-only\">メニューを開く/閉じる</span>\n        </Button>\n      </SheetTrigger>\n      <SheetContent side=\"left\">\n        {navs.map((nav) => (\n          <Button asChild key={nav.title} variant=\"ghost\" className=\"w-full\">\n            <Link href={nav.href}>{nav.title}</Link>\n          </Button>\n        ))}\n      </SheetContent>\n    </Sheet>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ]
+}

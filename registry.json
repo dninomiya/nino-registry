@@ -22,7 +22,7 @@
       ],
       "files": [
         {
-          "path": "registry/new-york/marketing-kit/page.tsx",
+          "path": "registry/new-york/marketing-page/page.tsx",
           "type": "registry:page",
           "target": "app/(marketing)/page.tsx"
         }

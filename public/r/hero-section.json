@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hero-section",
+  "type": "registry:component",
+  "title": "Hero Section",
+  "description": "ヒーローセクションコンポーネント",
+  "registryDependencies": [
+    "button",
+    "https://registry.dninomiya.com/r/marketing-section.json"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/hero-section/hero-section.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\nimport MarketingSection, {\n  MarketingSectionContent,\n} from \"../marketing-section/marketing-section\";\n\nexport default function HeroSection() {\n  return (\n    <MarketingSection>\n      <div className=\"py-10 px-4 lg:py-20 lg:px-8 text-center\">\n        <MarketingSectionContent>\n          <div className=\"max-w-4xl mx-auto\">\n            <h1 className=\"text-5xl/normal font-bold mb-6\">\n              次世代のソリューションで\n              <br />\n              ビジネスを加速させる\n            </h1>\n            <p className=\"text-xl/relaxed mb-8 max-w-2xl mx-auto \">\n              革新的な技術とユーザー体験で、あなたのビジネスを次のレベルへ。\n              今すぐ始めて、競合他社に差をつけましょう。\n            </p>\n            <div className=\"flex gap-4 justify-center\">\n              <Button size=\"lg\">無料で始める</Button>\n              <Button variant=\"outline\" size=\"lg\">\n                詳細を見る\n              </Button>\n            </div>\n          </div>\n        </MarketingSectionContent>\n      </div>\n    </MarketingSection>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ]
+}

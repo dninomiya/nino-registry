@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "main-nav",
+  "type": "registry:component",
+  "title": "Main Nav",
+  "description": "メインナビゲーションコンポーネント",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/main-nav/main-nav.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\nimport Link from \"next/link\";\n\nconst navs = [\n  {\n    title: \"機能\",\n    href: \"#features\",\n  },\n  {\n    title: \"料金プラン\",\n    href: \"#pricing\",\n  },\n  {\n    title: \"利用者の声\",\n    href: \"#testimonials\",\n  },\n  {\n    title: \"よくある質問\",\n    href: \"#faq\",\n  },\n  {\n    title: \"お問い合わせ\",\n    href: \"#cta\",\n  },\n];\n\nexport default function MainNav() {\n  return (\n    <div className=\"gap-0.5 hidden md:flex\">\n      {navs.map((nav) => (\n        <Button asChild key={nav.title} variant=\"ghost\">\n          <Link href={nav.href}>{nav.title}</Link>\n        </Button>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ]
+}

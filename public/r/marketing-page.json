@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "marketing-page",
+  "type": "registry:page",
+  "title": "マーケティングページ",
+  "description": "現在ベータ版です。",
+  "registryDependencies": [
+    "https://registry.dninomiya.com/r/header.json",
+    "https://registry.dninomiya.com/r/hero-section.json",
+    "https://registry.dninomiya.com/r/features-section.json",
+    "https://registry.dninomiya.com/r/pricing-section.json",
+    "https://registry.dninomiya.com/r/testimonials-section.json",
+    "https://registry.dninomiya.com/r/faq-section.json",
+    "https://registry.dninomiya.com/r/cta-section.json",
+    "https://registry.dninomiya.com/r/footer.json"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/marketing-page/page.tsx",
+      "content": "import Header from \"@/registry/new-york/header/header\";\nimport HeroSection from \"@/registry/new-york/hero-section/hero-section\";\nimport FeaturesSection from \"@/registry/new-york/features-section/features-section\";\nimport PricingSection from \"@/registry/new-york/pricing-section/pricing-section\";\nimport TestimonialsSection from \"@/registry/new-york/testimonials-section/testimonials-section\";\nimport FaqSection from \"@/registry/new-york/faq-section/faq-section\";\nimport CtaSection from \"@/registry/new-york/cta-section/cta-section\";\nimport Footer from \"@/registry/new-york/footer/footer\";\nimport LogosSection from \"@/registry/new-york/logos-section/logos-section\";\n\nexport default function MarketingPage() {\n  return (\n    <>\n      <Header />\n      <HeroSection />\n      <LogosSection />\n      <FeaturesSection />\n      <PricingSection />\n      <TestimonialsSection />\n      <FaqSection />\n      <CtaSection />\n      <Footer />\n    </>\n  );\n}\n",
+      "type": "registry:page",
+      "target": "app/(marketing)/page.tsx"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ]
+}

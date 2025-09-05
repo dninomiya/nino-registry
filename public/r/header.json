@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "header",
+  "type": "registry:component",
+  "title": "Header",
+  "description": "ヘッダーコンポーネント",
+  "registryDependencies": [
+    "button",
+    "https://registry.dninomiya.com/r/logo.json",
+    "https://registry.dninomiya.com/r/main-nav.json",
+    "https://registry.dninomiya.com/r/mobile-nav.json"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/header/header.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\nimport Logo from \"@/registry/new-york/logo/logo\";\nimport MainNav from \"@/registry/new-york/main-nav/main-nav\";\nimport MobileNav from \"@/registry/new-york/mobile-nav/mobile-nav\";\nimport Link from \"next/link\";\n\nexport default function Header() {\n  return (\n    <header className=\"border-b sticky top-0 bg-background z-20\">\n      <div className=\"container h-16 mx-auto flex items-center gap-2\">\n        <MobileNav />\n        <Link href=\"/\" className=\"block\">\n          <Logo className=\"h-5\" />\n        </Link>\n        <MainNav />\n        <span className=\"flex-1\"></span>\n        <Button asChild variant=\"outline\">\n          <Link href=\"/login\">ログイン</Link>\n        </Button>\n      </div>\n    </header>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ]
+}

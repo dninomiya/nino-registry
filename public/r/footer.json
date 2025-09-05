@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "footer",
+  "type": "registry:component",
+  "title": "Footer",
+  "description": "フッターコンポーネント",
+  "dependencies": [
+    "@icons-pack/react-simple-icons",
+    "@radix-ui/react-slot"
+  ],
+  "registryDependencies": [
+    "button",
+    "https://registry.dninomiya.com/r/logo.json"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/footer/footer.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\nimport Logo from \"@/registry/new-york/logo/logo\";\nimport { SiGithub, SiX, SiYoutube } from \"@icons-pack/react-simple-icons\";\nimport { Slot } from \"@radix-ui/react-slot\";\nimport Link from \"next/link\";\nimport ToggleTheme from \"../toggle-theme/toggle-theme\";\n\nconst socialLinks = [\n  {\n    title: \"GitHub\",\n    href: \"\",\n    icon: <SiGithub />,\n  },\n  {\n    title: \"YouTube\",\n    href: \"\",\n    icon: <SiYoutube />,\n  },\n  {\n    title: \"X\",\n    href: \"\",\n    icon: <SiX />,\n  },\n];\n\nconst APP_NAME = \"DemoApp\";\n\nconst navs = [\n  {\n    title: \"サービス\",\n    items: [\n      {\n        title: \"サービス1\",\n        href: \"/\",\n      },\n      {\n        title: \"サービス2\",\n        href: \"/about\",\n      },\n      {\n        title: \"サービス3\",\n        href: \"/contact\",\n      },\n    ],\n  },\n  {\n    title: \"会社\",\n    items: [\n      {\n        title: \"会社概要\",\n        href: \"/compnay\",\n      },\n      {\n        title: \"お知らせ\",\n        href: \"/news\",\n      },\n      {\n        title: \"お問い合わせ\",\n        href: \"/contact\",\n      },\n    ],\n  },\n  {\n    title: \"法務\",\n    items: [\n      {\n        title: \"特定商法表記\",\n        href: \"/legal\",\n      },\n      {\n        title: \"プライバシーポリシー\",\n        href: \"/privacy\",\n      },\n      {\n        title: \"サービス利用規約\",\n        href: \"/terms\",\n      },\n    ],\n  },\n];\n\nexport default function Footer() {\n  return (\n    <footer className=\"border-t\">\n      <div className=\"py-10 lg:py-20 container flex flex-col lg:flex-row gap-12 justify-between\">\n        <div className=\"space-y-4 max-w-xs\">\n          <Logo />\n          <p className=\"text-muted-foreground text-sm\">\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,\n            quos.\n          </p>\n          <div className=\"flex items-center gap-2 mt-4\">\n            {socialLinks.map((link) => (\n              <Button asChild key={link.title} variant=\"ghost\" size=\"icon\">\n                <Link href={link.href} className=\"text-muted-foreground\">\n                  <Slot className=\"size-5\">{link.icon}</Slot>\n                  <span className=\"sr-only\">{link.title}</span>\n                </Link>\n              </Button>\n            ))}\n          </div>\n        </div>\n\n        <div className=\"flex flex-col lg:flex-row gap-10 lg:gap-36\">\n          {navs.map((nav) => (\n            <div key={nav.title}>\n              <h3 className=\"font-semibold mb-6\">{nav.title}</h3>\n              <div className=\"space-y-4 text-[15px]\">\n                {nav.items.map((item) => (\n                  <div key={item.title} className=\"text-muted-foreground\">\n                    <Link\n                      href={item.href}\n                      className=\"hover:text-secondary-foreground\"\n                    >\n                      {item.title}\n                    </Link>\n                  </div>\n                ))}\n              </div>\n            </div>\n          ))}\n        </div>\n      </div>\n      <div className=\"border-t py-4 md:py-4\">\n        <div className=\"container flex justify-between items-center\">\n          <p className=\"text-sm text-muted-foreground\">\n            &copy; {new Date().getFullYear()} {APP_NAME}\n          </p>\n          <ToggleTheme />\n        </div>\n      </div>\n    </footer>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ]
+}

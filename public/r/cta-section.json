@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cta-section",
+  "type": "registry:component",
+  "title": "CTA Section",
+  "description": "CTAセクションコンポーネント",
+  "registryDependencies": [
+    "button",
+    "https://registry.dninomiya.com/r/marketing-section.json"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/cta-section/cta-section.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\nimport MarketingSection, {\n  MarketingSectionContent,\n} from \"../marketing-section/marketing-section\";\n\nexport default function CtaSection() {\n  return (\n    <MarketingSection id=\"cta\">\n      <MarketingSectionContent>\n        <div className=\"max-w-4xl mx-auto text-center\">\n          <h2 className=\"text-4xl/normal font-bold mb-6\">\n            今すぐ始めて、\n            <br />\n            ビジネスを次のレベルへ\n          </h2>\n          <p className=\"text-xl mb-8 text-muted-foreground max-w-2xl mx-auto\">\n            数千社が既に導入し、業務効率を大幅に向上させています。\n            あなたも今日から始めませんか？\n          </p>\n          <div className=\"flex gap-4 justify-center flex-col sm:flex-row\">\n            <Button size=\"lg\">無料で始める</Button>\n            <Button size=\"lg\" variant=\"outline\">\n              デモを見る\n            </Button>\n          </div>\n          <p className=\"text-sm mt-6 text-muted-foreground\">\n            クレジットカード不要 • 5分で開始 • いつでもキャンセル可能\n          </p>\n        </div>\n      </MarketingSectionContent>\n    </MarketingSection>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ]
+}
