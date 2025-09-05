@@ -22,20 +22,17 @@ const filterRegistryItems = (items: RegistryItem[]) => {
   );
   const hookItems = srcItems.filter((item) => item.type === "registry:hook");
   const libItems = srcItems.filter((item) => item.type === "registry:lib");
-  const pageItems = srcItems.filter((item) => item.type === "registry:page");
 
   return {
     componentItems,
     hookItems,
     libItems,
-    pageItems,
   };
 };
 
 export const getDocSchema = async () => {
   const { items } = await getRegistry();
-  const { componentItems, hookItems, libItems, pageItems } =
-    filterRegistryItems(items);
+  const { componentItems, hookItems, libItems } = filterRegistryItems(items);
 
   const schema: DocSchema = [
     ...basicDoc,

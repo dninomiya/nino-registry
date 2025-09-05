@@ -1,4 +1,3 @@
-import { getDocSchema } from "@/lib/doc";
 import { getBaseURL } from "@/lib/get-base-url";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
@@ -35,8 +34,6 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const docSchema = await getDocSchema();
-
   return (
     <html lang="ja" suppressHydrationWarning>
       <body
