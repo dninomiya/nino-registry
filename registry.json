@@ -9,6 +9,7 @@
       "type": "registry:page",
       "title": "マーケティングキット",
       "description": "ランディングページや関連ページのセット",
+      "categories": ["marketing"],
       "registryDependencies": [
         "https://registry.dninomiya.com/r/header.json",
         "https://registry.dninomiya.com/r/hero-section.json",
@@ -31,6 +32,7 @@
       "name": "logo",
       "type": "registry:component",
       "title": "Logo",
+      "categories": ["marketing"],
       "description": "ロゴコンポーネント",
       "files": [
         {
@@ -43,6 +45,7 @@
       "name": "main-nav",
       "type": "registry:component",
       "title": "Main Nav",
+      "categories": ["marketing"],
       "description": "メインナビゲーションコンポーネント",
       "files": [
         {
@@ -58,6 +61,7 @@
       "name": "mobile-nav",
       "type": "registry:component",
       "title": "Mobile Nav",
+      "categories": ["marketing"],
       "description": "モバイルナビゲーションコンポーネント",
       "registryDependencies": [
         "button",
@@ -74,6 +78,7 @@
       "name": "header",
       "type": "registry:component",
       "title": "Header",
+      "categories": ["marketing"],
       "description": "ヘッダーコンポーネント",
       "registryDependencies": [
         "button",
@@ -92,6 +97,7 @@
       "name": "toggle-theme",
       "type": "registry:component",
       "title": "Toggle Theme",
+      "categories": ["marketing"],
       "description": "テーマを切り替えるコンポーネント",
       "registryDependencies": [
         "button"
@@ -110,6 +116,7 @@
       "name": "footer",
       "type": "registry:component",
       "title": "Footer",
+      "categories": ["marketing"],
       "description": "フッターコンポーネント",
       "registryDependencies": [
         "button",
@@ -130,6 +137,7 @@
       "name": "marketing-section",
       "type": "registry:component",
       "title": "Marketing Section",
+      "categories": ["marketing"],
       "description": "マーケティングセクションコンポーネント",
       "files": [
         {
@@ -142,6 +150,7 @@
       "name": "hero-section",
       "type": "registry:component",
       "title": "Hero Section",
+      "categories": ["marketing"],
       "description": "ヒーローセクションコンポーネント",
       "registryDependencies": [
         "button",
@@ -158,6 +167,7 @@
       "name": "features-section",
       "type": "registry:component",
       "title": "Features Section",
+      "categories": ["marketing"],
       "description": "機能セクションコンポーネント",
       "registryDependencies": [
         "card",
@@ -175,6 +185,7 @@
       "name": "pricing-section",
       "type": "registry:component",
       "title": "Pricing Section",
+      "categories": ["marketing"],
       "description": "料金プランセクションコンポーネント",
       "registryDependencies": [
         "badge",
@@ -196,6 +207,7 @@
       "name": "testimonials-section",
       "type": "registry:component",
       "title": "Testimonials Section",
+      "categories": ["marketing"],
       "description": "利用者の声セクションコンポーネント",
       "registryDependencies": [
         "card",
@@ -213,6 +225,7 @@
       "name": "faq-section",
       "type": "registry:component",
       "title": "FAQ Section",
+      "categories": ["marketing"],
       "description": "よくある質問セクションコンポーネント",
       "registryDependencies": [
         "accordion",
@@ -229,6 +242,7 @@
       "name": "cta-section",
       "type": "registry:component",
       "title": "CTA Section",
+      "categories": ["marketing"],
       "description": "CTAセクションコンポーネント",
       "registryDependencies": [
         "button",
