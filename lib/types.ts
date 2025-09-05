@@ -8,6 +8,7 @@ export type DocItem = {
   id: string;
   title: string;
   description: string;
+  categories?: string[];
   meta?: {
     docs: {
       title: string;

@@ -8,16 +8,21 @@ const transformRegistryItemToDocItem = (item: RegistryItem): DocItem => {
     title: item.title,
     description: item.description,
     meta: item.meta,
+    categories: item.categories,
   };
 };
 
 const filterRegistryItems = (items: RegistryItem[]) => {
-  const componentItems = items.filter(
+  const srcItems = items.filter(
+    (item) => !item.categories?.includes("marketing"),
+  );
+
+  const componentItems = srcItems.filter(
     (item) => item.type === "registry:component",
   );
-  const hookItems = items.filter((item) => item.type === "registry:hook");
-  const libItems = items.filter((item) => item.type === "registry:lib");
-  const pageItems = items.filter((item) => item.type === "registry:page");
+  const hookItems = srcItems.filter((item) => item.type === "registry:hook");
+  const libItems = srcItems.filter((item) => item.type === "registry:lib");
+  const pageItems = srcItems.filter((item) => item.type === "registry:page");
 
   return {
     componentItems,
@@ -34,10 +39,10 @@ export const getDocSchema = async () => {
 
   const schema: DocSchema = [
     ...basicDoc,
-    {
-      title: "ページ",
-      items: pageItems.map(transformRegistryItemToDocItem),
-    },
+    // {
+    //   title: "ページ",
+    //   items: pageItems.map(transformRegistryItemToDocItem),
+    // },
     {
       title: "コンポーネント",
       items: componentItems.map(transformRegistryItemToDocItem),

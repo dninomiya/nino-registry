@@ -17,9 +17,10 @@ export const basicDoc: DocSchema = [
           "MCP と nino/registry を連携させることでAI経由で操作できます。",
       },
       {
-        title: "推奨パッケージ",
-        id: "recommended-packages",
-        description: "用途ごとにオススメのパッケージをまとめています。",
+        title: "マーケティング",
+        id: "marketing",
+        description:
+          "マーケティング向けのコンポーネントとフックをまとめています。",
       },
     ],
   },
