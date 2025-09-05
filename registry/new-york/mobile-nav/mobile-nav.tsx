@@ -6,15 +6,23 @@ import Link from "next/link";
 const navs = [
   {
     title: "機能",
-    href: "/#features",
+    href: "#features",
   },
   {
     title: "料金プラン",
-    href: "/#pricing",
+    href: "#pricing",
+  },
+  {
+    title: "利用者の声",
+    href: "#testimonials",
+  },
+  {
+    title: "よくある質問",
+    href: "#faq",
   },
   {
     title: "お問い合わせ",
-    href: "/#cta",
+    href: "#cta",
   },
 ];
 

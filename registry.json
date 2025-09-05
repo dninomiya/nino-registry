@@ -9,11 +9,235 @@
       "type": "registry:page",
       "title": "マーケティングキット",
       "description": "ランディングページや関連ページのセット",
+      "registryDependencies": [
+        "https://registry.dninomiya.com/r/header.json",
+        "https://registry.dninomiya.com/r/hero-section.json",
+        "https://registry.dninomiya.com/r/features-section.json",
+        "https://registry.dninomiya.com/r/pricing-section.json",
+        "https://registry.dninomiya.com/r/testimonials-section.json",
+        "https://registry.dninomiya.com/r/faq-section.json",
+        "https://registry.dninomiya.com/r/cta-section.json",
+        "https://registry.dninomiya.com/r/footer.json"
+      ],
       "files": [
         {
           "path": "registry/new-york/marketing-kit/page.tsx",
           "type": "registry:page",
           "target": "app/(marketing)/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "logo",
+      "type": "registry:component",
+      "title": "Logo",
+      "description": "ロゴコンポーネント",
+      "files": [
+        {
+          "path": "registry/new-york/logo/logo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "main-nav",
+      "type": "registry:component",
+      "title": "Main Nav",
+      "description": "メインナビゲーションコンポーネント",
+      "files": [
+        {
+          "path": "registry/new-york/main-nav/main-nav.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "button"
+      ]
+    },
+    {
+      "name": "mobile-nav",
+      "type": "registry:component",
+      "title": "Mobile Nav",
+      "description": "モバイルナビゲーションコンポーネント",
+      "registryDependencies": [
+        "button",
+        "sheet"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/mobile-nav/mobile-nav.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "header",
+      "type": "registry:component",
+      "title": "Header",
+      "description": "ヘッダーコンポーネント",
+      "registryDependencies": [
+        "button",
+        "https://registry.dninomiya.com/r/logo.json",
+        "https://registry.dninomiya.com/r/main-nav.json",
+        "https://registry.dninomiya.com/r/mobile-nav.json"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/header/header.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "toggle-theme",
+      "type": "registry:component",
+      "title": "Toggle Theme",
+      "description": "テーマを切り替えるコンポーネント",
+      "registryDependencies": [
+        "button"
+      ],
+      "dependencies": [
+        "next-themes"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/toggle-theme/toggle-theme.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "footer",
+      "type": "registry:component",
+      "title": "Footer",
+      "description": "フッターコンポーネント",
+      "registryDependencies": [
+        "button",
+        "https://registry.dninomiya.com/r/logo.json"
+      ],
+      "dependencies": [
+        "@icons-pack/react-simple-icons",
+        "@radix-ui/react-slot"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/footer/footer.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "marketing-section",
+      "type": "registry:component",
+      "title": "Marketing Section",
+      "description": "マーケティングセクションコンポーネント",
+      "files": [
+        {
+          "path": "registry/new-york/marketing-section/marketing-section.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hero-section",
+      "type": "registry:component",
+      "title": "Hero Section",
+      "description": "ヒーローセクションコンポーネント",
+      "registryDependencies": [
+        "button",
+        "https://registry.dninomiya.com/r/marketing-section.json"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/hero-section/hero-section.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "features-section",
+      "type": "registry:component",
+      "title": "Features Section",
+      "description": "機能セクションコンポーネント",
+      "registryDependencies": [
+        "card",
+        "skeleton",
+        "https://registry.dninomiya.com/r/marketing-section.json"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/features-section/features-section.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "pricing-section",
+      "type": "registry:component",
+      "title": "Pricing Section",
+      "description": "料金プランセクションコンポーネント",
+      "registryDependencies": [
+        "badge",
+        "button",
+        "card",
+        "label",
+        "switch",
+        "check",
+        "https://registry.dninomiya.com/r/marketing-section.json"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/pricing-section/pricing-section.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "testimonials-section",
+      "type": "registry:component",
+      "title": "Testimonials Section",
+      "description": "利用者の声セクションコンポーネント",
+      "registryDependencies": [
+        "card",
+        "avatar",
+        "https://registry.dninomiya.com/r/marketing-section.json"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/testimonials-section/testimonials-section.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "faq-section",
+      "type": "registry:component",
+      "title": "FAQ Section",
+      "description": "よくある質問セクションコンポーネント",
+      "registryDependencies": [
+        "accordion",
+        "https://registry.dninomiya.com/r/marketing-section.json"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/faq-section/faq-section.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "cta-section",
+      "type": "registry:component",
+      "title": "CTA Section",
+      "description": "CTAセクションコンポーネント",
+      "registryDependencies": [
+        "button",
+        "https://registry.dninomiya.com/r/marketing-section.json"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/cta-section/cta-section.tsx",
+          "type": "registry:component"
         }
       ]
     },
