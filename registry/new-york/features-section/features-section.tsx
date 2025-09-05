@@ -1,35 +1,39 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import MarketingSection, {
   MarketingSectionDescription,
   MarketingSectionHeader,
   MarketingSectionTitle,
   MarketingSectionContent,
 } from "../marketing-section/marketing-section";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default function FeaturesSection() {
   const features = [
     {
-      title: "高速パフォーマンス",
+      title: "機能タイトル1",
       description:
-        "最新技術により、従来比3倍の処理速度を実現。ユーザー体験を大幅に向上させます。",
-      icon: "⚡",
+        "機能の説明機能の説明機能の説明機能の説明機能の説明機能の説明機能の説明機能の説明",
     },
     {
-      title: "セキュリティ重視",
+      title: "機能タイトル2",
       description:
-        "エンタープライズグレードのセキュリティで、大切なデータを確実に保護します。",
-      icon: "🔒",
+        "機能の説明機能の説明機能の説明機能の説明機能の説明機能の説明機能の説明機能の説明機能の説明",
     },
     {
-      title: "簡単統合",
+      title: "機能タイトル3",
       description:
-        "既存システムとの連携が簡単。数分でセットアップが完了します。",
-      icon: "🔗",
+        "機能の説明機能の説明機能の説明機能の説明機能の説明機能の説明機能の説明機能の説明機能の説明",
     },
   ];
 
   return (
-    <MarketingSection>
+    <MarketingSection id="features">
       <MarketingSectionHeader>
         <MarketingSectionTitle>主な機能</MarketingSectionTitle>
         <MarketingSectionDescription>
@@ -40,14 +44,14 @@ export default function FeaturesSection() {
       <MarketingSectionContent>
         <div className="grid md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <Card key={index} className="text-center">
-              <CardHeader>
-                <div className="text-4xl mb-4">{feature.icon}</div>
-                <CardTitle>{feature.title}</CardTitle>
-              </CardHeader>
+            <Card key={index}>
               <CardContent>
-                <p className="text-muted-foreground">{feature.description}</p>
+                <Skeleton className="aspect-video" />
               </CardContent>
+              <CardHeader>
+                <CardTitle>{feature.title}</CardTitle>
+                <CardDescription>{feature.description}</CardDescription>
+              </CardHeader>
             </Card>
           ))}
         </div>

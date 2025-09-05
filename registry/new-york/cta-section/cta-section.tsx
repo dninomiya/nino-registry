@@ -5,7 +5,7 @@ import MarketingSection, {
 
 export default function CtaSection() {
   return (
-    <MarketingSection>
+    <MarketingSection id="cta">
       <MarketingSectionContent>
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl/normal font-bold mb-6">

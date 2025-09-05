@@ -6,7 +6,7 @@ import MarketingSection, {
 export default function HeroSection() {
   return (
     <MarketingSection>
-      <div className="py-20 px-8 text-center">
+      <div className="py-10 px-4 lg:py-20 lg:px-8 text-center">
         <MarketingSectionContent>
           <div className="max-w-4xl mx-auto">
             <h1 className="text-5xl/normal font-bold mb-6">

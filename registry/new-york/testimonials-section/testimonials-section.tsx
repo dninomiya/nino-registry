@@ -1,6 +1,8 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import MarketingSection, {
+  MarketingSectionHeader,
+  MarketingSectionDescription,
   MarketingSectionTitle,
   MarketingSectionContent,
 } from "../marketing-section/marketing-section";
@@ -38,14 +40,19 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <MarketingSection>
+    <MarketingSection id="testimonials">
+      <MarketingSectionHeader>
+        <MarketingSectionTitle>ユーザーの声</MarketingSectionTitle>
+        <MarketingSectionDescription>
+          ユーザーからの声をご紹介します
+        </MarketingSectionDescription>
+      </MarketingSectionHeader>
       <MarketingSectionContent>
-        <MarketingSectionTitle>お客様の声</MarketingSectionTitle>
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <Card key={index}>
               <CardContent className="flex-1">
-                <Quote className="text-muted-foreground/30 size-10 mb-6" />
+                <Quote className="text-muted-foreground size-10 mb-6" />
 
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   {testimonial.content}

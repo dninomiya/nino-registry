@@ -7,6 +7,8 @@ import {
 import MarketingSection, {
   MarketingSectionTitle,
   MarketingSectionContent,
+  MarketingSectionDescription,
+  MarketingSectionHeader,
 } from "../marketing-section/marketing-section";
 
 export default function FaqSection() {
@@ -39,23 +41,22 @@ export default function FaqSection() {
   ];
 
   return (
-    <MarketingSection>
+    <MarketingSection id="faq">
+      <MarketingSectionHeader>
+        <MarketingSectionTitle>よくある質問</MarketingSectionTitle>
+        <MarketingSectionDescription>
+          lorem ipsum dolor sit amet consectetur
+        </MarketingSectionDescription>
+      </MarketingSectionHeader>
       <MarketingSectionContent>
-        <div className="max-w-4xl mx-auto">
-          <MarketingSectionTitle>よくある質問</MarketingSectionTitle>
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-left">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
+        <Accordion type="single" collapsible>
+          {faqs.map((faq, index) => (
+            <AccordionItem key={index} value={`item-${index}`}>
+              <AccordionTrigger>{faq.question}</AccordionTrigger>
+              <AccordionContent>{faq.answer}</AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
       </MarketingSectionContent>
     </MarketingSection>
   );

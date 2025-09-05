@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "ninoui",
+  "homepage": "https://registry.dninomiya.com",
+  "author": "nino (https://registry.dninomiya.com)",
+  "items": [
+    {
+      "name": "logos-section",
+      "type": "registry:component",
+      "title": "Logos Section",
+      "description": "企業ロゴを表示するセクションコンポーネント",
+      "files": [
+        {
+          "path": "registry/new-york/logos-section/logos-section.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "https://registry.dninomiya.com/r/marketing-section.json"
+      ]
+    }
+  ]
+}

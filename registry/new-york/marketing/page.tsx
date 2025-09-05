@@ -6,12 +6,14 @@ import TestimonialsSection from "@/registry/new-york/testimonials-section/testim
 import FaqSection from "@/registry/new-york/faq-section/faq-section";
 import CtaSection from "@/registry/new-york/cta-section/cta-section";
 import Footer from "@/registry/new-york/footer/footer";
+import LogosSection from "@/registry/new-york/logos-section/logos-section";
 
 export default function MarketingPage() {
   return (
     <>
       <Header />
       <HeroSection />
+      <LogosSection />
       <FeaturesSection />
       <PricingSection />
       <TestimonialsSection />

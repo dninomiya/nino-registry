@@ -1,0 +1,53 @@
+# Logos Section
+
+企業ロゴを美しく表示するセクションコンポーネントです。
+
+## 特徴
+
+- レスポンシブデザイン対応
+- ホバー時のグレースケール解除効果
+- 遅延読み込み対応
+- カスタマイズ可能なロゴ配列
+
+## インストール
+
+```bash
+npx shadcn@latest add https://registry.dninomiya.com/r/logos-section.json
+```
+
+## 使用方法
+
+```tsx
+import LogosSection from "@/components/logos-section";
+
+export default function Page() {
+  return (
+    <div>
+      <LogosSection />
+    </div>
+  );
+}
+```
+
+## カスタマイズ
+
+ロゴの配列をカスタマイズして、独自のロゴを表示できます：
+
+```tsx
+const customLogos = [
+  {
+    name: "Your Company",
+    logo: "/path/to/your/logo.png",
+    alt: "Your Company Logo",
+  },
+  // 他のロゴを追加...
+];
+```
+
+## Props
+
+このコンポーネントは現在、カスタムpropsを受け取りませんが、内部のlogos配列を編集することでカスタマイズできます。
+
+## 依存関係
+
+- `marketing-section` - マーケティングセクションの基本レイアウト

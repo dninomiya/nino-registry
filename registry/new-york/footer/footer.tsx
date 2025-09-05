@@ -3,6 +3,7 @@ import Logo from "@/registry/new-york/logo/logo";
 import { SiGithub, SiX, SiYoutube } from "@icons-pack/react-simple-icons";
 import { Slot } from "@radix-ui/react-slot";
 import Link from "next/link";
+import ToggleTheme from "../toggle-theme/toggle-theme";
 
 const socialLinks = [
   {
@@ -50,14 +51,6 @@ const navs = [
         href: "/compnay",
       },
       {
-        title: "ブログ",
-        href: "/blog",
-      },
-      {
-        title: "採用情報",
-        href: "/recruit",
-      },
-      {
         title: "お知らせ",
         href: "/news",
       },
@@ -71,7 +64,7 @@ const navs = [
     title: "法務",
     items: [
       {
-        title: "特定商法取引法に基づく表記",
+        title: "特定商法表記",
         href: "/legal",
       },
       {
@@ -89,8 +82,8 @@ const navs = [
 export default function Footer() {
   return (
     <footer className="border-t">
-      <div className="px-8 py-20 grid grid-cols-5 gap-6">
-        <div className="space-y-4 col-span-2">
+      <div className="py-10 lg:py-20 container flex flex-col lg:flex-row gap-12 justify-between">
+        <div className="space-y-4 max-w-xs">
           <Logo />
           <p className="text-muted-foreground text-sm">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
@@ -108,22 +101,34 @@ export default function Footer() {
           </div>
         </div>
 
-        {navs.map((nav) => (
-          <div key={nav.title}>
-            <h3 className="font-semibold mb-6">{nav.title}</h3>
-            <div className="space-y-4 text-[15px]">
-              {nav.items.map((item) => (
-                <div key={item.title} className="text-muted-foreground">
-                  <Link href={item.href}>{item.title}</Link>
-                </div>
-              ))}
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-36">
+          {navs.map((nav) => (
+            <div key={nav.title}>
+              <h3 className="font-semibold mb-6">{nav.title}</h3>
+              <div className="space-y-4 text-[15px]">
+                {nav.items.map((item) => (
+                  <div key={item.title} className="text-muted-foreground">
+                    <Link
+                      href={item.href}
+                      className="hover:text-secondary-foreground"
+                    >
+                      {item.title}
+                    </Link>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-      <p className="text-sm text-muted-foreground border-t p-8">
-        &copy; {new Date().getFullYear()} {APP_NAME}
-      </p>
+      <div className="border-t py-4 md:py-4">
+        <div className="container flex justify-between items-center">
+          <p className="text-sm text-muted-foreground">
+            &copy; {new Date().getFullYear()} {APP_NAME}
+          </p>
+          <ToggleTheme />
+        </div>
+      </div>
     </footer>
   );
 }

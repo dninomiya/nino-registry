@@ -72,7 +72,7 @@ export default function PricingSection() {
   ];
 
   return (
-    <MarketingSection>
+    <MarketingSection id="pricing">
       <MarketingSectionHeader>
         <MarketingSectionTitle>料金プラン</MarketingSectionTitle>
         <MarketingSectionDescription>

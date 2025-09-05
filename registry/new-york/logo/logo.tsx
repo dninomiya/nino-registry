@@ -1,9 +1,29 @@
-import Link from "next/link";
+import { cn } from "@/lib/utils";
 
-export default function Logo() {
+export default function Logo({ className }: { className?: string }) {
   return (
-    <Link href="/" className="font-bold text-lg block w-fit">
-      LOGO
-    </Link>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 169 40"
+      className={cn("h-8", className)}
+    >
+      <path
+        fill="currentColor"
+        fillRule="evenodd"
+        d="M10.015 2.5V40H0V2.5zM15.022 2.5h21.282c6.913 0 12.518 5.596 12.518 12.5s-5.605 12.5-12.518 12.5H25.037V40H15.022zm10.015 15h11.267a2.5 2.5 0 0 0 2.503-2.5c0-1.38-1.12-2.5-2.503-2.5H25.037zM86.378 2.5v19.375c0 4.487 3.643 8.125 8.137 8.125s8.137-3.638 8.137-8.125V2.5h10.015v19.375c0 10.01-8.127 18.125-18.152 18.125s-18.152-8.115-18.152-18.125V2.5z"
+        clipRule="evenodd"
+      ></path>
+      <path
+        fill="currentColor"
+        fillRule="evenodd"
+        d="M52.578 20c0-9.665 7.846-17.5 17.526-17.5h2.503v10h-2.503c-4.149 0-7.511 3.358-7.511 7.5v1.25c0 10.355-8.408 18.75-18.778 18.75h-1.252V30h1.252c4.84 0 8.763-3.918 8.763-8.75z"
+        clipRule="evenodd"
+      ></path>
+      <path
+        fill="currentColor"
+        d="M169 3.75a3.753 3.753 0 0 1-3.756 3.75 3.75 3.75 0 0 1-3.755-3.75A3.75 3.75 0 0 1 165.244 0 3.753 3.753 0 0 1 169 3.75M123.42 40l4.779-19.982 3.553 12.021c2.118 7.17 12.289 7.17 14.408 0l3.552-12.02L154.491 40h10.296l-7.514-31.42c-1.787-7.473-12.332-7.75-14.51-.381l-3.807 12.884L135.148 8.2c-2.177-7.368-12.723-7.092-14.51.38L113.124 40z"
+      ></path>
+    </svg>
   );
 }

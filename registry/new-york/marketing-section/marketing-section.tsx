@@ -10,7 +10,7 @@ export default function MarketingSection({
   id?: string;
 }) {
   return (
-    <section className={cn("py-20 px-8 odd:bg-muted", className)} id={id}>
+    <section className={cn("py-10 lg:py-20 odd:bg-muted", className)} id={id}>
       {children}
     </section>
   );
@@ -34,7 +34,7 @@ export function MarketingSectionTitle({
   children: React.ReactNode;
 }) {
   return (
-    <h2 className="text-primary leading-tighter text-4xl font-semibold tracking-tight text-balance lg:leading-[1.1] lg:font-semibold xl:text-5xl xl:tracking-tighter max-w-4xl">
+    <h2 className="text-primary leading-tighter text-4xl font-semibold tracking-tight text-balance lg:leading-[1.1] lg:font-semibold xl:text-4xl xl:tracking-tighter max-w-4xl">
       {children}
     </h2>
   );
@@ -57,5 +57,5 @@ export function MarketingSectionContent({
 }: {
   children: React.ReactNode;
 }) {
-  return <div className="max-w-6xl mx-auto">{children}</div>;
+  return <div className="container">{children}</div>;
 }
