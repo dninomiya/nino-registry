@@ -7,6 +7,7 @@
   "registryDependencies": [
     "https://registry.dninomiya.com/r/header.json",
     "https://registry.dninomiya.com/r/hero-section.json",
+    "https://registry.dninomiya.com/r/logos-section.json",
     "https://registry.dninomiya.com/r/features-section.json",
     "https://registry.dninomiya.com/r/pricing-section.json",
     "https://registry.dninomiya.com/r/testimonials-section.json",
