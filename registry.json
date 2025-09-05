@@ -121,7 +121,8 @@
       "description": "フッターコンポーネント",
       "registryDependencies": [
         "button",
-        "https://registry.dninomiya.com/r/logo.json"
+        "https://registry.dninomiya.com/r/logo.json",
+        "https://registry.dninomiya.com/r/toggle-theme.json"
       ],
       "dependencies": [
         "@icons-pack/react-simple-icons",
