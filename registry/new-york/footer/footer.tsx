@@ -3,7 +3,7 @@ import Logo from "@/registry/new-york/logo/logo";
 import { SiGithub, SiX, SiYoutube } from "@icons-pack/react-simple-icons";
 import { Slot } from "@radix-ui/react-slot";
 import Link from "next/link";
-import ToggleTheme from "../toggle-theme/toggle-theme";
+import ToggleTheme from "@/registry/new-york/toggle-theme/toggle-theme";
 
 const socialLinks = [
   {
