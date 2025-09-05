@@ -19,8 +19,7 @@ export const basicDoc: DocSchema = [
       {
         title: "マーケティング",
         id: "marketing",
-        description:
-          "マーケティング向けのコンポーネントとフックをまとめています。",
+        description: "マーケティング用のページやセクション",
       },
     ],
   },
