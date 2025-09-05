@@ -142,7 +142,8 @@
       "files": [
         {
           "path": "registry/new-york/marketing-section/marketing-section.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "components/marketing/marketing-section.tsx"
         }
       ]
     },
@@ -159,7 +160,8 @@
       "files": [
         {
           "path": "registry/new-york/hero-section/hero-section.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "components/marketing/hero-section.tsx"
         }
       ]
     },
@@ -177,7 +179,8 @@
       "files": [
         {
           "path": "registry/new-york/features-section/features-section.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "components/marketing/features-section.tsx"
         }
       ]
     },
@@ -198,7 +201,8 @@
       "files": [
         {
           "path": "registry/new-york/pricing-section/pricing-section.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "components/marketing/pricing-section.tsx"
         }
       ]
     },
@@ -216,7 +220,8 @@
       "files": [
         {
           "path": "registry/new-york/testimonials-section/testimonials-section.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "components/marketing/testimonials-section.tsx"
         }
       ]
     },
@@ -233,7 +238,8 @@
       "files": [
         {
           "path": "registry/new-york/faq-section/faq-section.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "components/marketing/faq-section.tsx"
         }
       ]
     },
@@ -250,7 +256,8 @@
       "files": [
         {
           "path": "registry/new-york/cta-section/cta-section.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "components/marketing/cta-section.tsx"
         }
       ]
     },

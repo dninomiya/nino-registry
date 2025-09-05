@@ -13,7 +13,8 @@
     {
       "path": "registry/new-york/features-section/features-section.tsx",
       "content": "import {\n  Card,\n  CardContent,\n  CardDescription,\n  CardHeader,\n  CardTitle,\n} from \"@/components/ui/card\";\nimport MarketingSection, {\n  MarketingSectionDescription,\n  MarketingSectionHeader,\n  MarketingSectionTitle,\n  MarketingSectionContent,\n} from \"../marketing-section/marketing-section\";\nimport { Skeleton } from \"@/components/ui/skeleton\";\n\nexport default function FeaturesSection() {\n  const features = [\n    {\n      title: \"機能タイトル1\",\n      description:\n        \"機能の説明機能の説明機能の説明機能の説明機能の説明機能の説明機能の説明機能の説明\",\n    },\n    {\n      title: \"機能タイトル2\",\n      description:\n        \"機能の説明機能の説明機能の説明機能の説明機能の説明機能の説明機能の説明機能の説明機能の説明\",\n    },\n    {\n      title: \"機能タイトル3\",\n      description:\n        \"機能の説明機能の説明機能の説明機能の説明機能の説明機能の説明機能の説明機能の説明機能の説明\",\n    },\n  ];\n\n  return (\n    <MarketingSection id=\"features\">\n      <MarketingSectionHeader>\n        <MarketingSectionTitle>主な機能</MarketingSectionTitle>\n        <MarketingSectionDescription>\n          lorem ipsum dolor sit amet consectetur\n        </MarketingSectionDescription>\n      </MarketingSectionHeader>\n\n      <MarketingSectionContent>\n        <div className=\"grid md:grid-cols-3 gap-8\">\n          {features.map((feature, index) => (\n            <Card key={index}>\n              <CardContent>\n                <Skeleton className=\"aspect-video\" />\n              </CardContent>\n              <CardHeader>\n                <CardTitle>{feature.title}</CardTitle>\n                <CardDescription>{feature.description}</CardDescription>\n              </CardHeader>\n            </Card>\n          ))}\n        </div>\n      </MarketingSectionContent>\n    </MarketingSection>\n  );\n}\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/marketing/features-section.tsx"
     }
   ],
   "categories": [

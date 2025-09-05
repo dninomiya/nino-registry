@@ -8,7 +8,8 @@
     {
       "path": "registry/new-york/marketing-section/marketing-section.tsx",
       "content": "import { cn } from \"@/lib/utils\";\n\nexport default function MarketingSection({\n  children,\n  className,\n  id,\n}: {\n  children: React.ReactNode;\n  className?: string;\n  id?: string;\n}) {\n  return (\n    <section className={cn(\"py-10 lg:py-20 odd:bg-muted\", className)} id={id}>\n      {children}\n    </section>\n  );\n}\n\nexport function MarketingSectionHeader({\n  children,\n}: {\n  children: React.ReactNode;\n}) {\n  return (\n    <div className=\"container flex flex-col items-center gap-2 py-8 text-center md:py-16 lg:py-20 xl:gap-4\">\n      {children}\n    </div>\n  );\n}\n\nexport function MarketingSectionTitle({\n  children,\n}: {\n  children: React.ReactNode;\n}) {\n  return (\n    <h2 className=\"text-primary leading-tighter text-4xl font-semibold tracking-tight text-balance lg:leading-[1.1] lg:font-semibold xl:text-4xl xl:tracking-tighter max-w-4xl\">\n      {children}\n    </h2>\n  );\n}\n\nexport function MarketingSectionDescription({\n  children,\n}: {\n  children: React.ReactNode;\n}) {\n  return (\n    <p className=\"text-foreground max-w-3xl text-base text-balance sm:text-lg\">\n      {children}\n    </p>\n  );\n}\n\nexport function MarketingSectionContent({\n  children,\n}: {\n  children: React.ReactNode;\n}) {\n  return <div className=\"container\">{children}</div>;\n}\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/marketing/marketing-section.tsx"
     }
   ],
   "categories": [
