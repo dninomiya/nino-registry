@@ -166,6 +166,23 @@
       ]
     },
     {
+      "name": "logos-section",
+      "type": "registry:component",
+      "title": "Logos Section",
+      "description": "企業ロゴを表示するセクションコンポーネント",
+      "categories": ["marketing"],
+      "files": [
+        {
+          "path": "registry/new-york/logos-section/logos-section.tsx",
+          "type": "registry:component",
+          "target": "components/marketing/logos-section.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "https://registry.dninomiya.com/r/marketing-section.json"
+      ]
+    },
+    {
       "name": "features-section",
       "type": "registry:component",
       "title": "Features Section",
@@ -380,21 +397,6 @@
           }
         ]
       }
-    },
-    {
-      "name": "logos-section",
-      "type": "registry:component",
-      "title": "Logos Section",
-      "description": "企業ロゴを表示するセクションコンポーネント",
-      "files": [
-        {
-          "path": "registry/new-york/logos-section/logos-section.tsx",
-          "type": "registry:component"
-        }
-      ],
-      "registryDependencies": [
-        "https://registry.dninomiya.com/r/marketing-section.json"
-      ]
     }
   ]
 }
