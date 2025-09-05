@@ -18,7 +18,7 @@ import MarketingSection, {
   MarketingSectionDescription,
   MarketingSectionHeader,
   MarketingSectionTitle,
-} from "../marketing-section/marketing-section";
+} from "@/registry/new-york/marketing-section/marketing-section";
 
 export default function PricingSection() {
   const [annual, setAnnual] = useState(false);

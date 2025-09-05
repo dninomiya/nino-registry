@@ -10,7 +10,7 @@ import MarketingSection, {
   MarketingSectionHeader,
   MarketingSectionTitle,
   MarketingSectionContent,
-} from "../marketing-section/marketing-section";
+} from "@/registry/new-york/marketing-section/marketing-section";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export default function FeaturesSection() {

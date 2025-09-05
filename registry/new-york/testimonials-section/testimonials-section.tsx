@@ -5,7 +5,7 @@ import MarketingSection, {
   MarketingSectionDescription,
   MarketingSectionTitle,
   MarketingSectionContent,
-} from "../marketing-section/marketing-section";
+} from "@/registry/new-york/marketing-section/marketing-section";
 import { Quote } from "lucide-react";
 
 export default function TestimonialsSection() {

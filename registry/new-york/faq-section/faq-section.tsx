@@ -9,7 +9,7 @@ import MarketingSection, {
   MarketingSectionContent,
   MarketingSectionDescription,
   MarketingSectionHeader,
-} from "../marketing-section/marketing-section";
+} from "@/registry/new-york/marketing-section/marketing-section";
 
 export default function FaqSection() {
   const faqs = [

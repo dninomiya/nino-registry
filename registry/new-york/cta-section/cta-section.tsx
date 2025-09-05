@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import MarketingSection, {
   MarketingSectionContent,
-} from "../marketing-section/marketing-section";
+} from "@/registry/new-york/marketing-section/marketing-section";
 
 export default function CtaSection() {
   return (
