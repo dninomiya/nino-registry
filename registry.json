@@ -5,10 +5,10 @@
   "author": "nino (https://registry.dninomiya.com)",
   "items": [
     {
-      "name": "marketing-kit",
+      "name": "marketing-page",
       "type": "registry:page",
-      "title": "マーケティングキット",
-      "description": "ランディングページや関連ページのセット",
+      "title": "マーケティングページ",
+      "description": "現在ベータ版です。",
       "categories": ["marketing"],
       "registryDependencies": [
         "https://registry.dninomiya.com/r/header.json",
