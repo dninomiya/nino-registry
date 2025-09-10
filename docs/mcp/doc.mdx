@@ -8,7 +8,7 @@
 1. プロジェクト環境で shadcn MCP を有効にする。(Claude Code, Cursor などに対応)
 
 ```bash
-pnpx shadcn@latest add mcp
+pnpx shadcn@latest mcp init
 ```
 
 2. プロジェクトにレジストリを登録する
@@ -17,12 +17,15 @@ pnpx shadcn@latest add mcp
 
 ```json
 {
-  "registry": [
-    {
-      "url": "https://registry.dninomiya.com/r/{name}.json"
-    }
-  ]
+  "registries": {
+    "ninoui": "https://registry.dninomiya.com/r/{name}.json"
+  }
 }
 ```
 
-以上でセットアップは完了です。
+以上でセットアップは完了です。たとえば以下のようにエージェントに依頼することができます。
+
+- `ninoui` のすべてのコンポーネントを見せて
+- `ninoui` の `input-image` を使ったアバターフォームを作って
+
+MCPが反応しない場合、エディターを再起動します。
